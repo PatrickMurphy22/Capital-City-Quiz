@@ -152,3 +152,95 @@
     margin: 10px 0 5px 0;
     font-size: 17.5px;
 }
+  /* ANSWERS */
+
+  #answer-container{
+    height: 50vh;
+    width: 70vw;
+    margin: auto;
+}
+
+.easyAnswer, .mediumAnswer, .hardAnswer{
+    border: solid 1px rgb(255, 255, 255);
+    height: 7vh;
+    width: 71vw;
+    margin-top: 12.5px;
+    border-radius: 30px;
+    display: flex;
+    background-color: white;
+    color: blue;
+}
+
+#a, #b, #c, #d{
+    border-radius:50px ;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-left: 17.5px;
+    font-size: 12px;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#a h4, #b h4, #c h4, #d h4{
+    padding-top: 7.5px;
+}
+
+.ans{
+    width: 45vw;
+    font-size: 22.5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+    text-align: center;
+}
+
+#a{
+    background-color: tomato;
+}
+
+#b{
+    background-color: rgb(0, 8, 255);
+}
+
+#c{
+    background-color: rgb(9, 182, 0);
+}
+
+#d{
+    background-color: rgb(194, 0, 126);
+}
+
+.easyAnswer:hover{
+    background-color: rgb(21, 87, 111);
+    color: white;
+}
+
+.mediumAnswer:hover{
+    background-color:  rgb(2, 111, 22);
+    color: white;
+}
+
+.hardAnswer:hover{
+    background-color: rgb(110, 0, 0);
+    color: white;
+}
+.next{
+    border: solid 1px rgb(255, 255, 255);
+    height: 4vh;
+    width: 20vw;
+    border-radius: 30px;
+    display: flex;
+    background-color: rgb(21, 87, 111);
+    color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 15.5px;
+}
+#next{
+    margin: auto;
+}
+.next:hover{
+    background-color: white;
+    color:rgb(21, 87, 111);
+}
