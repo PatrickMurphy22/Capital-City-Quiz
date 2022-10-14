@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+   
+   /* ALL */
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-family: prompt, sans-serif;
+}
+
+#easy-body{
+    background-color:rgb(0, 222, 230);
+}
+
+#medium-body{
+    background-color:rgba(15, 178, 18, 0.778);
+}
+
+#hard-body{
+    background-color:rgb(233, 1, 1);
+}
+
+#easy-body #header-box{
+    background-color: rgb(21, 87, 111);
+    color: white;
+}
+
+#medium-body #header-box{
+    background-color: rgb(2, 111, 22);
+    color: white;
+}
+
+#hard-body #header-box{
+    background-color: rgb(110, 0, 0);
+    color: white;
+}
+    /* HEADER */
+
+#header-box{
+    font-size: 15px;
+    height: 6vh;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#lets-play{
+    height: 5vh;
+    font-size: 20px;
+    text-align: center;
+}
+
+#header-box a{
+    text-decoration: none;
+    color: rgb(215, 90, 52);
+}
+
+#easy-body #header-box a, #medium-body #header-box a, #hard-body #header-box a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+    /* DIFFICULTY*/
+
+#difficulty-settings{
+    height: 70vh;
+}
+
+#easy-container, #medium-container, #hard-container{
+    height: 15vh;
+    width: 85vw;
+    margin: auto;
+    border-radius: 20px;
+}
+
+#easy-container a, #medium-container a, #hard-container a{
+    text-decoration: none;
+    color: white;
+}
+
+#medium-container, #hard-container{
+    margin-top: 75px;
+}
+
+#easy-container{
+    margin-top: 30px;
+}
+#easy-box, #medium-box, #hard-box{
+    display: flex;
+    box-shadow: 10px 5px 5px rgb(113, 113, 113);
+}
+
+.easy-mode, .medium-mode, .hard-mode{
+    height: 17.5vh;
+    width: 50vw;
+    border-radius: 20px;
+}
+
+.easy-mode p, .medium-mode p, .hard-mode p{
+    height: 20px;
+    padding-left: 10px;
+    margin-top: 60px;
+}
+.easy-mode h3, .medium-mode h3, .hard-mode h3{
+    height: 20px;
+    padding-left: 10px;
+}
+
+#easy-box{
+    background-image: linear-gradient(to right, rgb(255, 0, 85), rgb(255, 147, 89) );
+    border-radius: 20px;
+}
+
+#medium-box{
+    background-image: linear-gradient(to right, rgb(173, 62, 168), rgb(237, 157, 244) );
+    border-radius: 20px;
+}
+
+#hard-box{
+    background-image: linear-gradient(to right, rgb(76, 80, 179), rgb(66, 164, 225) );
+    border-radius: 20px;
+}
