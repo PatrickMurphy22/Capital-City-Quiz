@@ -6,11 +6,6 @@ let currentQuestion;
 // List of EASY countrys in array format
 const easyCountrys= [
     {
-        country:("Ireland"),
-        citys:["Dublin","Limerick","Cork","Galway"],
-        capital:["Dublin"]
-    },
-    {
         country:("England"),
         citys:["London","Liverpool","Manchester","Newcastle"],
         capital:("London")
@@ -66,6 +61,11 @@ const easyCountrys= [
         capital:("Madrid")
     },
     {
+        country:("Ireland"),
+        citys:["Dublin","Limerick","Cork","Galway"],
+        capital:("Dublin")
+    },
+    {
         country:("Poland"),
         citys:["Warsaw","Krakow","Wroclaw","Gdansk"],
         capital:("Warsaw")
@@ -119,9 +119,9 @@ function playerPick(){
     for(let i = 0; i < 4; i++){
         buttons[i].addEventListener("click", ()=> {
             if(currentQuestion.citys[i] === currentQuestion.capital){
-                console.log("correct")
+                console.log(`${currentQuestion.citys[i]} is Correct`)
             }else{
-                console.log("wrong")
+                console.log(`${currentQuestion.citys[i]} is Wrong`)
             }
         });
     }
