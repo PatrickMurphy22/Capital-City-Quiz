@@ -76,3 +76,18 @@ const easyCountrys= [
         capital:("Rome")
     },
 ]
+let currentQuestion;
+
+function randomQuestion(){
+    let randomiseCountry = easyCountrys[Math.floor(Math.random() * easyCountrys.length )]
+    return randomiseCountry
+}
+
+function displayQuestion(){
+
+    currentQuestion = randomQuestion();
+    let displayCountry = document.getElementById("easy-country");
+    displayCountry.innerHTML = currentQuestion.country;
+}
+
+displayQuestion();
