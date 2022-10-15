@@ -88,6 +88,21 @@ function displayQuestion(){
     currentQuestion = randomQuestion();
     let displayCountry = document.getElementById("easy-country");
     displayCountry.innerHTML = currentQuestion.country;
+
+     //credited to sebhastian.com
+    currentQuestion.citys.sort(function () {
+        return Math.random() - 0.5;
+      });
+
+    for(let i = 0; i < currentQuestion.citys.length; i++){
+        let displayCitys = document.getElementsByClassName("ans");
+        displayCitys[i].innerHTML = currentQuestion.citys[i]
+        console.log(currentQuestion.citys[i])
+    }
+    console.log(currentQuestion)
+    console.log(currentQuestion.country)
+    console.log(currentQuestion.citys)
+    console.log(currentQuestion.capital)
 }
 
 displayQuestion();
