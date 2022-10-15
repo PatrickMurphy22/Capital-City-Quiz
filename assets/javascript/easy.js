@@ -63,7 +63,7 @@ const easyCountrys= [
     {
         country:("Poland"),
         citys:["Warsaw","Krakow","Wroclaw","Gdansk"],
-        capital:("Poland")
+        capital:("Warsaw")
     },
     {
         country:("Germany"),
@@ -97,12 +97,22 @@ function displayQuestion(){
     for(let i = 0; i < currentQuestion.citys.length; i++){
         let displayCitys = document.getElementsByClassName("ans");
         displayCitys[i].innerHTML = currentQuestion.citys[i]
-        console.log(currentQuestion.citys[i])
     }
-    console.log(currentQuestion)
-    console.log(currentQuestion.country)
-    console.log(currentQuestion.citys)
-    console.log(currentQuestion.capital)
 }
 
-displayQuestion();
+function playerPick(){
+    displayQuestion();
+    
+    let buttons = document.getElementsByClassName("easyAnswer");
+    for(let i = 0; i < 4; i++){
+        buttons[i].addEventListener("click", ()=> {
+            if(currentQuestion.citys[i] === currentQuestion.capital){
+                console.log("correct")
+            }else{
+                console.log("wrong")
+            }
+        });
+    }
+}
+
+increaseScore();
