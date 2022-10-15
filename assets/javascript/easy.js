@@ -1,3 +1,8 @@
+let round = 1;
+document.getElementById("round").innerHTML = (`Round: ${round}/15`)
+
+let currentQuestion;
+
 // List of EASY countrys in array format
 const easyCountrys= [
     {
@@ -76,7 +81,13 @@ const easyCountrys= [
         capital:("Rome")
     },
 ]
-let currentQuestion;
+
+function easyGame(){
+    randomQuestion();
+    displayQuestion();
+    playerPick();
+    nextRound();
+}
 
 function randomQuestion(){
     let randomiseCountry = easyCountrys[Math.floor(Math.random() * easyCountrys.length )]
@@ -89,6 +100,7 @@ function displayQuestion(){
     let displayCountry = document.getElementById("easy-country");
     displayCountry.innerHTML = currentQuestion.country;
 
+    easyCountrys
      //credited to sebhastian.com
     currentQuestion.citys.sort(function () {
         return Math.random() - 0.5;
@@ -113,6 +125,22 @@ function playerPick(){
             }
         });
     }
+
+    console.log(currentQuestion)
 }
 
-increaseScore();
+
+function nextRound(){
+
+    let next = document.getElementById("next");
+    next.addEventListener("click", () => {
+        playerPick();
+            round++;
+            document.getElementById("round").innerHTML = (`Round: ${round}/15`)
+            if(round === 15){
+                console.log("GAME OVER")
+            }
+    })
+}
+
+easyGame();
