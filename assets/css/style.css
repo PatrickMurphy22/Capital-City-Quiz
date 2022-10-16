@@ -289,4 +289,19 @@
         margin:0 5% 0 5%;
         display: inline;
     }
-    
+
+        /* SCORE BOX */
+
+.score-container{
+    border: solid red 2px;
+    height: 85vh;
+    display: flex;
+}
+
+.score-box{
+    height: 70vh;
+    width: 80vw;
+    border: solid green 2px;
+    margin: auto;
+
+}

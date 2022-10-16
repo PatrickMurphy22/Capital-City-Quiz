@@ -158,7 +158,7 @@ function nextRound(){
                 let finish = document.getElementById("finish")
                 console.log(finish)
                 finish.addEventListener("click", () =>{
-                    // document.location.href = 
+                    document.location.href = "scorePage.html"
                 })
             }
     })
