@@ -11,16 +11,13 @@ let currentQuestion;
 
 let finalScore = document.getElementById("final-score");
 
+result = document.getElementById("title");
 
 let buttons = document.getElementsByClassName("easyAnswer");
 
 // List of EASY countrys in array format.
 const easyCountrys= [
-    {
-        country:("England"),
-        citys:["London","Liverpool","Manchester","Newcastle"],
-        capital:("London")
-    },
+
     {
         country:("Scotland"),
         citys:["Edinburgh","Glasgow","Aberdeen","Dundee"],
@@ -91,6 +88,28 @@ const easyCountrys= [
         citys:["Rome","Venice","Milan","Naples"],
         capital:("Rome")
     },
+]
+
+const easyFacts = [
+    {
+        fact: ("")
+    },
+    {
+        fact: ("")
+    },
+    {
+        fact: ("")
+    },
+    {
+        fact: ("")
+    },
+    {
+        fact: ("")
+    },
+    {
+        fact: ("")
+    },
+
 ]
 
 function easyGame(){
@@ -175,9 +194,12 @@ function nextRound(){
                     finish.style.visibility = "hidden"
 
                     finalScore.innerHTML = score;
-                    if(score <= 4 ){
-                        result = document.getElementById("title");
-                        result.innerHTML = "You're far from a globe trotter"
+                    if(score < 5 ){
+                        result.innerHTML = "Do you even know where your house is??"
+                    }else if(score <= 7 ){
+                        result.innerHTML = "You're far from a globe trotter, but youre getting there"
+                    }else{
+                        result.innerHTML = "Not bad, maybe you are ready to take the next step..."
                     }
 
                 })
