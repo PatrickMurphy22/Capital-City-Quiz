@@ -6,15 +6,13 @@ document.getElementById("round").innerHTML = (`Round: ${round}/10`)
 let score = 0;
 document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
 
-// Set currentQuestion variable to undefined to use throught code.
+// Set variables to undefined to use throught code.
 let currentQuestion;
-
 let funFacts;
 
+// added DOM to variables to use throughout code
 let finalScore = document.getElementById("final-score");
-
 let result = document.getElementById("title");
-
 let buttons = document.getElementsByClassName("easyAnswer");
 
 // List of EASY countrys in array format.
@@ -106,7 +104,7 @@ const easyFacts = [
         fact: ("France is the most visited country in the world with 89 million annual tourists.")
     },
     {
-        fact: ("Naples is, of course, also the birthplace of pizza. ")
+        fact: ("Naples of course, is the birthplace of pizza ")
     },
     {
         fact: ("Believe it or not, there are no leprechauns in Ireland")
@@ -146,14 +144,12 @@ function playerPick(){
     for(let i = 0; i < 4; i++){
         buttons[i].addEventListener("click", ()=> {
             if(currentQuestion.capital === currentQuestion.citys[i]){
-                console.log(`${currentQuestion.citys[i]} is Correct`)
                 score++;
                 document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
                 buttons[i].style.backgroundColor = "green"
                 document.body.style.backgroundColor = "green"
                 buttons[i].style.color = "white"
             }else{
-                console.log(`${currentQuestion.citys[i]} is Wrong`)
                 buttons[i].style.backgroundColor = "red"
                 document.body.style.backgroundColor = "red"
                 buttons[i].style.color = "white"
@@ -208,18 +204,9 @@ function nextRound(){
                     let random = Math.floor(Math.random() * easyFacts.length)
                     funFacts = easyFacts[random]
                     fun.innerHTML = funFacts.fact
-                    console.log(funFacts)
                 })
             }
     })
 }
-
-function scorePageScore(){
-
-    let finalScore = document.getElementById("score");
-    finalScore.innerHTML = score;
-}
-
-score
 
 easyGame();
