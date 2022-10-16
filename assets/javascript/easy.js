@@ -1,5 +1,8 @@
 let round = 1;
-document.getElementById("round").innerHTML = (`Round: ${round}/15`)
+document.getElementById("round").innerHTML = (`Round: ${round}/10`)
+
+let score = 1;
+document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
 
 let currentQuestion;
 
@@ -83,20 +86,19 @@ const easyCountrys= [
 ]
 
 function easyGame(){
-    randomQuestion();
     displayQuestion();
     playerPick();
     nextRound();
 }
 
-function randomQuestion(){
-    let randomiseCountry = easyCountrys[Math.floor(Math.random() * easyCountrys.length )]
-    return randomiseCountry
-}
 
 function displayQuestion(){
+    
+    let randomise = Math.floor(Math.random() * easyCountrys.length )
+    currentQuestion = easyCountrys[randomise]
 
-    currentQuestion = randomQuestion();
+    easyCountrys.splice(randomise, 1)
+
     let displayCountry = document.getElementById("easy-country");
     displayCountry.innerHTML = currentQuestion.country;
 
@@ -118,15 +120,15 @@ function playerPick(){
     let buttons = document.getElementsByClassName("easyAnswer");
     for(let i = 0; i < 4; i++){
         buttons[i].addEventListener("click", ()=> {
-            if(currentQuestion.citys[i] === currentQuestion.capital){
+            if(currentQuestion.capital === currentQuestion.citys[i]){
                 console.log(`${currentQuestion.citys[i]} is Correct`)
+                score++;
+                document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
             }else{
                 console.log(`${currentQuestion.citys[i]} is Wrong`)
             }
         });
     }
-
-    console.log(currentQuestion)
 }
 
 
@@ -134,11 +136,12 @@ function nextRound(){
 
     let next = document.getElementById("next");
     next.addEventListener("click", () => {
-        playerPick();
+        displayQuestion();
             round++;
-            document.getElementById("round").innerHTML = (`Round: ${round}/15`)
-            if(round === 15){
+            document.getElementById("round").innerHTML = (`Round: ${round}/10`)
+            if(round === 1){
                 console.log("GAME OVER")
+                document.getElementById("easy-body").className = "hide"
             }
     })
 }
