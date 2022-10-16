@@ -124,8 +124,14 @@ function playerPick(){
                 console.log(`${currentQuestion.citys[i]} is Correct`)
                 score++;
                 document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
+                buttons[i].style.backgroundColor = "green"
+                document.body.style.backgroundColor = "green"
+                buttons[i].style.color = "white"
             }else{
                 console.log(`${currentQuestion.citys[i]} is Wrong`)
+                buttons[i].style.backgroundColor = "red"
+                document.body.style.backgroundColor = "red"
+                buttons[i].style.color = "white"
             }
         });
     }
