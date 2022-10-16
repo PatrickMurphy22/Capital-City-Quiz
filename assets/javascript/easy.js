@@ -9,6 +9,9 @@ document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
 // Set currentQuestion variable to undefined to use throught code.
 let currentQuestion;
 
+let finalScore = document.getElementById("final-score");
+
+
 let buttons = document.getElementsByClassName("easyAnswer");
 
 // List of EASY countrys in array format.
@@ -156,13 +159,38 @@ function nextRound(){
                 next.id = "finish"
                 next.className = "finish"
                 let finish = document.getElementById("finish")
-                console.log(finish)
                 finish.addEventListener("click", () =>{
-                    document.location.href = "scorePage.html"
+                    for(let i = 0; i < 4; i++){
+                        let hideButtons = document.getElementsByClassName("easyAnswer");
+                        hideButtons[i].style.visibility = "hidden"
+                        hideButtons[i].style.height = "0vh"
+                    }
+                    let qBox = document.getElementById("question-box")
+                    qBox.style.visibility = "hidden"
+                    qBox.style.height = "0vh"
+                    document.getElementById("score-container").removeAttribute("hidden")
+                    document.getElementById("score-box").style.height = "0vh"
+                    document.getElementById("answer-container").style.height = "40vh"
+                    document.getElementById("score-box").style.visibility = "hidden"
+                    finish.style.visibility = "hidden"
+
+                    finalScore.innerHTML = score;
+                    if(score <= 4 ){
+                        result = document.getElementById("title");
+                        result.innerHTML = "You're far from a globe trotter"
+                    }
+
                 })
             }
     })
 }
 
+function scorePageScore(){
+
+    let finalScore = document.getElementById("score");
+    finalScore.innerHTML = score;
+}
+
+score
 
 easyGame();

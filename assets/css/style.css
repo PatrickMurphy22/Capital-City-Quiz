@@ -34,6 +34,11 @@
     background-color: rgb(110, 0, 0);
     color: white;
 }
+
+#score-body, #score-header-box{
+    background-color: rgb(110, 0, 0);
+    color: white;
+}
     /* HEADER */
 
 #header-box{
@@ -293,12 +298,12 @@
         /* SCORE BOX */
 
 .score-container{
-    height: 85vh;
+    height:50vh;
     display: flex;
 }
 
 .score-box{
-    height: 70vh;
+    height: 40vh;
     width: 80vw;
     margin: auto;
     border-radius: 20px;
@@ -307,7 +312,7 @@
 .score-card{
     border: solid black 2px;
     background-color: white;
-    height: 25%;
+    height: 20vh;
     text-align: center;
 }
 .score1{
@@ -327,8 +332,7 @@
     border-radius: 30px;
     display: flex;
     background-color: rgb(0, 0, 0);
-    margin-top: 40.5px;
-}
+} 
 #return a{
     text-decoration: none;
     color: aliceblue;
@@ -341,4 +345,8 @@
 }
 #return:hover{
     background-color: white;
+}
+
+#title{
+    padding-top: 25px;
 }
