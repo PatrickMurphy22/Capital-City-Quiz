@@ -9,9 +9,11 @@ document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
 // Set currentQuestion variable to undefined to use throught code.
 let currentQuestion;
 
+let funFacts;
+
 let finalScore = document.getElementById("final-score");
 
-result = document.getElementById("title");
+let result = document.getElementById("title");
 
 let buttons = document.getElementsByClassName("easyAnswer");
 
@@ -92,22 +94,22 @@ const easyCountrys= [
 
 const easyFacts = [
     {
-        fact: ("")
+        fact: (" Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
     },
     {
-        fact: ("")
+        fact: ("Everyone who lives in Germany, even foreigners, can attend college tuition-free. ")
     },
     {
-        fact: ("")
+        fact: ("Some say tea is life, British people reportedly drink 165 million cups of tea a day")
     },
     {
-        fact: ("")
+        fact: ("France is the most visited country in the world with 89 million annual tourists.")
     },
     {
-        fact: ("")
+        fact: ("Naples is, of course, also the birthplace of pizza. ")
     },
     {
-        fact: ("")
+        fact: ("Believe it or not, there are no leprechauns in Ireland")
     },
 
 ]
@@ -202,6 +204,11 @@ function nextRound(){
                         result.innerHTML = "Not bad, maybe you are ready to take the next step..."
                     }
 
+                    let fun = document.getElementById("fun-fact");
+                    let random = Math.floor(Math.random() * easyFacts.length)
+                    funFacts = easyFacts[random]
+                    fun.innerHTML = funFacts.fact
+                    console.log(funFacts)
                 })
             }
     })
