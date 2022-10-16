@@ -168,7 +168,7 @@
     margin-top: 12.5px;
     border-radius: 30px;
     display: flex;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: blue;
 }
 
@@ -238,10 +238,10 @@
     margin: auto;
     margin-top: 15.5px;
 }
-#next{
+#next, #finish{
     margin: auto;
 }
-.next:hover{
+.next:hover, .finish:hover{
     background-color: white;
     color:rgb(21, 87, 111);
 }

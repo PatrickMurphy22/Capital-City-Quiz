@@ -1,12 +1,17 @@
+// Add ROUND variable and set to 1.
 let round = 1;
 document.getElementById("round").innerHTML = (`Round: ${round}/10`)
 
-let score = 1;
+// Add SCORE variable and set to 1.
+let score = 0;
 document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
 
+// Set currentQuestion variable to undefined to use throught code.
 let currentQuestion;
 
-// List of EASY countrys in array format
+let buttons = document.getElementsByClassName("easyAnswer");
+
+// List of EASY countrys in array format.
 const easyCountrys= [
     {
         country:("England"),
@@ -91,7 +96,6 @@ function easyGame(){
     nextRound();
 }
 
-
 function displayQuestion(){
     
     let randomise = Math.floor(Math.random() * easyCountrys.length )
@@ -102,7 +106,6 @@ function displayQuestion(){
     let displayCountry = document.getElementById("easy-country");
     displayCountry.innerHTML = currentQuestion.country;
 
-    easyCountrys
      //credited to sebhastian.com
     currentQuestion.citys.sort(function () {
         return Math.random() - 0.5;
@@ -115,9 +118,7 @@ function displayQuestion(){
 }
 
 function playerPick(){
-    displayQuestion();
     
-    let buttons = document.getElementsByClassName("easyAnswer");
     for(let i = 0; i < 4; i++){
         buttons[i].addEventListener("click", ()=> {
             if(currentQuestion.capital === currentQuestion.citys[i]){
@@ -137,19 +138,27 @@ function playerPick(){
     }
 }
 
-
 function nextRound(){
 
     let next = document.getElementById("next");
     next.addEventListener("click", () => {
         displayQuestion();
-            round++;
-            document.getElementById("round").innerHTML = (`Round: ${round}/10`)
-            if(round === 1){
-                console.log("GAME OVER")
-                document.getElementById("easy-body").className = "hide"
+        console.log(buttons)
+        document.body.style.backgroundColor = "rgb(0, 222, 230)"
+        for(let i = 0; i < 4; i++){
+            buttons[i].style.backgroundColor = "white"
+            buttons[i].style.color = "blue"
+        }
+        round++;
+        document.getElementById("round").innerHTML = (`Round: ${round}/10`)
+            if(round === 10){
+                next.innerHTML = "Finish"
+                next.id = "finish"
+                next.className = "finish"
+
             }
     })
 }
+
 
 easyGame();
