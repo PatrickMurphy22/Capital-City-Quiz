@@ -155,7 +155,11 @@ function nextRound(){
                 next.innerHTML = "Finish"
                 next.id = "finish"
                 next.className = "finish"
-
+                let finish = document.getElementById("finish")
+                console.log(finish)
+                finish.addEventListener("click", () =>{
+                    // document.location.href = 
+                })
             }
     })
 }
