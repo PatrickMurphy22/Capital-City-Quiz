@@ -293,7 +293,6 @@
         /* SCORE BOX */
 
 .score-container{
-    border: solid red 2px;
     height: 85vh;
     display: flex;
 }
@@ -301,7 +300,45 @@
 .score-box{
     height: 70vh;
     width: 80vw;
-    border: solid green 2px;
     margin: auto;
+    border-radius: 20px;
+}
 
+.score-card{
+    border: solid black 2px;
+    background-color: white;
+    height: 25%;
+    text-align: center;
+}
+.score1{
+    border-top-left-radius:20px ;
+    border-top-right-radius:20px ;
+}
+
+.score3{
+    border-bottom-left-radius:20px ;
+    border-bottom-right-radius:20px ;
+}
+
+#return{
+    border: solid 1px rgb(255, 255, 255);
+    height: 6vh;
+    width: 20vw;
+    border-radius: 30px;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    margin-top: 40.5px;
+}
+#return a{
+    text-decoration: none;
+    color: aliceblue;
+    margin: auto;
+    font-size: 20px;
+}
+#return {
+    margin: auto;
+    margin-top: 20px;
+}
+#return:hover{
+    background-color: white;
 }
