@@ -13,11 +13,11 @@
 }
 
 #medium-body{
-    background-color:rgba(15, 178, 18, 0.778);
+    background-color:rgb(174, 46, 212);
 }
 
 #hard-body{
-    background-color:rgb(233, 1, 1);
+    background-color:rgba(172, 20, 20, 0.993);
 }
 
 #easy-body #header-box{
@@ -26,17 +26,12 @@
 }
 
 #medium-body #header-box{
-    background-color: rgb(2, 111, 22);
+    background-color: rgb(97, 30, 94);
     color: white;
 }
 
 #hard-body #header-box{
-    background-color: rgb(110, 0, 0);
-    color: white;
-}
-
-#score-body, #score-header-box{
-    background-color: rgb(110, 0, 0);
+    background-color: rgba(68, 5, 5, 0.582);
     color: white;
 }
     /* HEADER */
@@ -56,7 +51,9 @@
 
 #header-box a{
     text-decoration: none;
-    color: rgb(215, 90, 52);
+    color:rgb(211, 18, 18);
+    text-shadow: 5px 5px 5px rgb(172, 170, 170);
+    
 }
 
 #easy-body #header-box a, #medium-body #header-box a, #hard-body #header-box a{
@@ -110,7 +107,8 @@
 }
 
 #easy-box{
-    background-image: linear-gradient(to right, rgb(255, 0, 85), rgb(255, 147, 89) );
+    background-image: linear-gradient(to right, rgb(76, 80, 179), rgb(66, 164, 225) );
+
     border-radius: 20px;
 }
 
@@ -120,8 +118,7 @@
 }
 
 #hard-box{
-    background-image: linear-gradient(to right, rgb(76, 80, 179), rgb(66, 164, 225) );
-    border-radius: 20px;
+    background-image: linear-gradient(to right, rgb(255, 0, 85), rgb(255, 147, 89) );    border-radius: 20px;
 }
 
 #question-box{
@@ -246,7 +243,7 @@
 #next, #finish{
     margin: auto;
 }
-.next:hover, .finish:hover{
+.next:hover{
     background-color: white;
     color:rgb(21, 87, 111);
 }
@@ -312,51 +309,82 @@
     display: flex;
 }
 
+
 .score-box{
     height: 40vh;
     width: 80vw;
     margin: auto;
+    margin-top: 30px;
     border-radius: 20px;
 }
 
 .score-card{
     border: solid black 2px;
-    background-color: white;
-    height: 20vh;
+    background-image: linear-gradient(to right, rgb(12, 188, 211), rgb(8, 245, 233) );
+    box-shadow: 10px 5px 5px rgb(113, 113, 113);
+    height: 17.5vh;
     text-align: center;
 }
+
+.med-score-card{
+    border: solid black 2px;
+    color: rgb(247, 241, 241);
+    background-image: linear-gradient(to right, rgb(66, 7, 68), rgb(228, 10, 217) );
+    box-shadow: 10px 5px 5px rgb(95, 1, 87);
+    height: 17.5vh;
+    text-align: center;
+}
+
+.hard-score-card{
+    border: solid black 2px;
+    color: rgb(247, 241, 241);
+    background-image: linear-gradient(to right, rgb(238, 30, 30), rgb(255, 119, 78) );
+    box-shadow: 10px 5px 5px rgb(105, 5, 5);
+    height: 17.5vh;
+    text-align: center;
+}
+
 .score1{
     border-top-left-radius:20px ;
     border-top-right-radius:20px ;
+    padding-top: 20px;
 }
 
+.score2{
+
+}
 .score3{
     border-bottom-left-radius:20px ;
     border-bottom-right-radius:20px ;
 }
 
-#return{
+#return, #hard-return{
     border: solid 1px rgb(255, 255, 255);
     height: 6vh;
     width: 20vw;
     border-radius: 30px;
     display: flex;
-    background-color: rgb(0, 0, 0);
+    box-shadow: 10px 5px 5px rgb(113, 113, 113);
+    background-color: rgb(0, 78, 109);
 } 
-#return a{
+#return a, #hard-return a{
     text-decoration: none;
     color: aliceblue;
     margin: auto;
     font-size: 20px;
 }
-#return {
+#return, #hard-return {
     margin: auto;
     margin-top: 20px;
 }
-#return:hover{
+#return:hover, #hard-return:hover{
     background-color: white;
 }
 
 #title{
-    padding-top: 15px;
+    padding-top: 20px;
+}
+
+#fun-fact{
+    padding-top:15px;
 }

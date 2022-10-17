@@ -1,4 +1,3 @@
-
 // Add ROUND variable and set to 1.
 let round = 1;
 document.getElementById("round").innerHTML = (`Round: ${round}/10`)
@@ -45,7 +44,7 @@ const hardCountrys = [
     },
     {
         country:("Jordan"),
-        citys:["Amman","Yemen","Oman","irbid"],
+        citys:["Amman","Yemen","Oman","Irbid"],
         capital:("Amman")
     },
     {
@@ -101,6 +100,7 @@ const hardCountrys = [
 
 ]
 
+
 //Fun Facts in Array format.
 const hardFacts = [
     {
@@ -127,6 +127,7 @@ const hardFacts = [
 //Easy game mode function, calls all functions in one function.
 function hardGame(){
     displayQuestion();
+    playerChoice();
     nextRound();
     endGame();
 }
@@ -158,36 +159,34 @@ function displayQuestion(){
 function playerChoice(){
     
     for(let i = 0; i < 4; i++){
-        buttons[i].addEventListener("click", playerPick )
-
-        function playerPick(){
-            if(currentQuestion.capital === currentQuestion.citys[i]){
-                score++;
-                document.getElementById("score").innerHTML = (`Score: ${score}/10`)
-                buttons[i].style.backgroundColor = "green"
-                document.body.style.backgroundColor = "green"
-                buttons[i].style.color = "white"
-                console.log(`${currentQuestion.citys[i]} is correct`)
-                }else{
-                buttons[i].style.backgroundColor = "red"
-                document.body.style.backgroundColor = "red"
-                buttons[i].style.color = "white"
-                console.log(`${currentQuestion.citys[i]} is wrong`)
+        buttons[i].addEventListener("click", () => {
+            if(currentQuestion.capital == currentQuestion.citys[i]){
+                buttons[i].id = "correct"
+                if(buttons[i].id === "correct"){
+                    score++;
+                    document.getElementById("score").innerHTML = (`Score: ${score}/10`)
+                    document.body.style.backgroundColor = "green"
+                    buttons[i].disabled = true;
                 }
-            }  
+                }else{
+                    document.body.style.backgroundColor = "red"
+                    buttons[i].id = "wrong"
+                    buttons[i].disabled = true;
+                }
+            })  
         }   
     }    
 
+
 // Adds event listener that increases round number and changes question.
 function nextRound(){
-    playerChoice();
+
     next.addEventListener("click", () => {
         displayQuestion();
-        console.log(buttons)
-        document.body.style.backgroundColor = "rgb(0, 222, 230)"
+        document.body.style.backgroundColor = "rgba(172, 20, 20, 0.993);"
         for(let i = 0; i < 4; i++){
-            buttons[i].style.backgroundColor = "white"
-            buttons[i].style.color = "blue"
+            buttons[i].removeAttribute("id");
+            buttons[i].disabled = false;
         }
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`)
@@ -202,7 +201,6 @@ function endGame(){
     if(round === 10){
         next.innerHTML = "Finish"
         next.id = "finish"
-        next.className = "finish"
         let finish = document.getElementById("finish")
         finish.addEventListener("click", () =>{
             for(let i = 0; i < 4; i++){
@@ -210,19 +208,21 @@ function endGame(){
                 hideButtons[i].style.visibility = "hidden"
                 hideButtons[i].style.height = "0vh"
             }
+            document.querySelector(".next").style.visibility = "hidden"
             qBox.style.visibility = "hidden"
             qBox.style.height = "0vh"
             scoreContainer.removeAttribute("hidden")
             scoreBox.style.height = "0vh"
             scoreBox.style.visibility = "hidden"
-            answerContainer.style.height = "40vh"
-            finish.style.visibility = "hidden"
+            answerContainer.style.height = "35vh"
+            finish.style.width = "0"
+            
 
             finalScore.innerHTML = score;
             if(score < 5 ){
                 result.innerHTML = "Do you even know where your house is??"
             }else if(score <= 7 ){
-                result.innerHTML = "You're far from a globe trotter, but youre getting there"
+                result.innerHTML = "You're far from a globe trotter, but you're getting there"
             }else{
                 result.innerHTML = "Not bad, maybe you are ready to take the next step..."
             }

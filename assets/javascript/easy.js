@@ -122,6 +122,7 @@ const easyFacts = [
 //Easy game mode function, calls all functions in one function.
 function easyGame(){
     displayQuestion();
+    playerChoice();
     nextRound();
     endGame();
 }
@@ -153,36 +154,35 @@ function displayQuestion(){
 function playerChoice(){
     
     for(let i = 0; i < 4; i++){
-        buttons[i].addEventListener("click", playerPick )
-
-        function playerPick(){
+        buttons[i].addEventListener("click", () => {
             if(currentQuestion.capital == currentQuestion.citys[i]){
                 buttons[i].id = "correct"
                 if(buttons[i].id === "correct"){
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`)
                     document.body.style.backgroundColor = "green"
-                    console.log(`${currentQuestion.citys[i]} is correct`)
+                    buttons[i].disabled = true;
                 }
                 }else{
                     document.body.style.backgroundColor = "red"
                     buttons[i].id = "wrong"
-                    console.log(`${currentQuestion.citys[i]} is wrong`)
+                    buttons[i].disabled = true;
                 }
-            }  
+            })  
         }   
     }    
 
+
 // Adds event listener that increases round number and changes question.
 function nextRound(){
-    playerChoice();
+
     next.addEventListener("click", () => {
         displayQuestion();
-        console.log(buttons)
         document.body.style.backgroundColor = "rgb(0, 222, 230)"
         for(let i = 0; i < 4; i++){
-            buttons[i].removeAttribute("id")
-            buttons.removeEventListener
+            buttons[i].removeAttribute("id");
+            buttons[i].disabled = false;
+
         }
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`)
@@ -197,7 +197,6 @@ function endGame(){
     if(round === 10){
         next.innerHTML = "Finish"
         next.id = "finish"
-        next.className = "finish"
         let finish = document.getElementById("finish")
         finish.addEventListener("click", () =>{
             for(let i = 0; i < 4; i++){
@@ -205,19 +204,21 @@ function endGame(){
                 hideButtons[i].style.visibility = "hidden"
                 hideButtons[i].style.height = "0vh"
             }
+            document.querySelector(".next").style.visibility = "hidden"
             qBox.style.visibility = "hidden"
             qBox.style.height = "0vh"
             scoreContainer.removeAttribute("hidden")
             scoreBox.style.height = "0vh"
             scoreBox.style.visibility = "hidden"
-            answerContainer.style.height = "40vh"
-            finish.style.visibility = "hidden"
+            answerContainer.style.height = "35vh"
+            finish.style.width = "0"
+            
 
             finalScore.innerHTML = score;
             if(score < 5 ){
                 result.innerHTML = "Do you even know where your house is??"
             }else if(score <= 7 ){
-                result.innerHTML = "You're far from a globe trotter, but youre getting there"
+                result.innerHTML = "You're far from a globe trotter, but you're getting there"
             }else{
                 result.innerHTML = "Not bad, maybe you are ready to take the next step..."
             }
