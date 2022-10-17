@@ -25,77 +25,77 @@ let qBox = document.getElementById("question-box");
 const hardCountrys = [
     {
         country:("Chad"),
-        citys:["N'Djamena","","",""],
+        citys:["N'Djamena","Sarh","Kelo","Abeche"],
         capital:("N'Djamena")
     },
     {
         country:("Colombia"),
-        citys:["Bogota","","",""],
+        citys:["Bogota","Medellin","Cali","Cartagena"],
         capital:("Bogota")
     },
     {
         country:("Ethiopia"),
-        citys:["Addis Ababa","","",""],
+        citys:["Addis Ababa","Gondar","Dire Dawa","Mek'ele"],
         capital:("Addis Ababa")
     },
     {
-        country:("Indonesia"),
-        citys:["Jakarta","","",""],
-        capital:("Jakarta")
+        country:("Slovenia"),
+        citys:["Ljubljana","Maribor","Bled","Koper"],
+        capital:("Ljubljana")
     },
     {
         country:("Jordan"),
-        citys:["Amman","","",""],
+        citys:["Amman","Yemen","Oman","irbid"],
         capital:("Amman")
     },
     {
         country:("Mozambique"),
-        citys:["Maputo","","",""],
+        citys:["Maputo","Beira","Nacala","Tete"],
         capital:("Maputo")
     },
     {
         country:("Trinidad and Tobago"),
-        citys:["Port of Spain","","",""],
+        citys:["Port of Spain","Port Fortin","San Fernando","Rio Claro"],
         capital:("Port of Spain")
     },
     {
         country:("Libya"),
-        citys:["Tripoli","","",""],
+        citys:["Tripoli","Benghazi","Khoms","Tobruk"],
         capital:("Tripoli")
     },
     {
         country:("Pakistan"),
-        citys:["Islamabad","","",""],
+        citys:["Islamabad","Lahore","Karachi","Faisalabad"],
         capital:("Islamabad")
     },
     {
         country:("Albania"),
-        citys:["Tirana","","",""],
+        citys:["Tirana","Berat","Kruje","Sarande"],
         capital:("Tirana")
     },
     {
         country:("Kosovo"),
-        citys:["Pristina","","",""],
+        citys:["Pristina","Prizren","Preja","Mitrovica"],
         capital:("Pristina")
     },
     {
         country:("Cameroon"),
-        citys:["Yaounde","","",""],
+        citys:["Yaounde","Bamenda","Douala","Ngaoundere"],
         capital:("Yaounde")
     },
     {
         country:("Mongolia"),
-        citys:["Ulaanbaatar","","",""],
+        citys:["Ulaanbaatar","Ulaangom","Darkhan","Murun"],
         capital:("Ulaanbaatar")
     },
     {
         country:("Uruguay"),
-        citys:["Montevideo","","",""],
+        citys:["Montevideo","Salto","Paysandu","Maldanado"],
         capital:("Montevideo")
     },
     {
-        country:("Saudi Arabia	"),
-        citys:["Riyadh","","",""],
+        country:("Saudi Arabia"),
+        citys:["Riyadh","Jeddah","Medina","Mecca"],
         capital:("Riyadh")
     },
 

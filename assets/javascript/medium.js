@@ -24,77 +24,77 @@ let qBox = document.getElementById("question-box");
 const mediumCountrys = [
     {
         country:("Afganistan"),
-        citys:["Kabul","","",""],
+        citys:["Kabul","Herat","Jalalabad","Khost"],
         capital:("Kabul")
     },
     {
         country:("Australia"),
-        citys:["Canberra","","",""],
+        citys:["Canberra","Melbourne","Sydney","Perth"],
         capital:("Canberra")
     },
     {
         country:("Cambodia"),
-        citys:["Phnom Penh","","",""],
+        citys:["Phnom Penh","Siem Reap","Poipet","Battambang"],
         capital:("Phnom Penh")
     },
     {
         country:("Croatia"),
-        citys:["Zagreb","","",""],
+        citys:["Zagreb","Split","Dubrovnik","Zadar"],
         capital:("Zagreb")
     },
     {
         country:("Malaysia"),
-        citys:["Kuala Lumpur"," "," ",""],
+        citys:["Kuala Lumpur","George Town","Ipoh","Kuching"],
         capital:("Kuala Lumpur")
     },
     {
         country:("Ghana"),
-        citys:["Accra","","",""],
+        citys:["Accra","Kumasi","Cape Coast","Tamale"],
         capital:("Accra")
     },
     {
         country:("Iraq"),
-        citys:["Baghdad","","",""],
+        citys:["Baghdad","Mosul","Ramadi","Samarra"],
         capital:("Baghdad")
     },
     {
         country:("Kenya"),
-        citys:["Nairobi","","",""],
+        citys:["Nairobi","Mombasa","Meru","Kisumu"],
         capital:("Nairobi")
     },
     {
         country:("Lebanon"),
-        citys:["Beirut","","",""],
+        citys:["Beirut","Tyre","Byblos","bint Jbeil"],
         capital:("Beirut")
     },
     {
         country:("Morocco"),
-        citys:["Rabat"," ","",""],
+        citys:["Rabat","Marrakesh","Casablanca","Fes"],
         capital:("Rabat")
     },
     {
         country:("Nepal"),
-        citys:["Kathmandu","","",""],
+        citys:["Kathmandu","Pokhara","Lalitpur","Biratnagar"],
         capital:("Kathmandu")
     },
     {
         country:("Peru"),
-        citys:["Lima","","",""],
+        citys:["Lima","Cusco","Arequipa","Chiclayo"],
         capital:("Lima")
     },
     {
         country:("New Zealand"),
-        citys:["Wellington","","",""],
+        citys:["Wellington","Auckland","Christchurch","Napier"],
         capital:("Wellington")
     },
     {
         country:("Brazil"),
-        citys:["Brasilia","","",""],
+        citys:["Brasilia","Rio de Janeiro","Sao Paulo","Salvador"],
         capital:("Brasilia")
     },
     {
         country:("Vietnam"),
-        citys:["Hanoi","","",""],
+        citys:["Hanoi","Ho Chi Minh","Hoi An","Da Nang"],
         capital:("Hanoi")
     },
 ]
