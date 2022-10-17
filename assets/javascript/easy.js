@@ -15,6 +15,11 @@ let finalScore = document.getElementById("final-score");
 let result = document.getElementById("title");
 let buttons = document.getElementsByClassName("easyAnswer");
 let next = document.getElementById("next");
+let scoreContainer = document.getElementById("score-container");
+let scoreBox = document.getElementById("score-box");
+let answerContainer = document.getElementById("answer-container");
+let qBox = document.getElementById("question-box");
+
 
 // List of EASY countrys in array format.
 const easyCountrys= [
@@ -190,13 +195,12 @@ function endGame(){
                 hideButtons[i].style.visibility = "hidden"
                 hideButtons[i].style.height = "0vh"
             }
-            let qBox = document.getElementById("question-box")
             qBox.style.visibility = "hidden"
             qBox.style.height = "0vh"
-            document.getElementById("score-container").removeAttribute("hidden")
-            document.getElementById("score-box").style.height = "0vh"
-            document.getElementById("answer-container").style.height = "40vh"
-            document.getElementById("score-box").style.visibility = "hidden"
+            scoreContainer.removeAttribute("hidden")
+            scoreBox.style.height = "0vh"
+            scoreBox.style.visibility = "hidden"
+            answerContainer.style.height = "40vh"
             finish.style.visibility = "hidden"
 
             finalScore.innerHTML = score;
