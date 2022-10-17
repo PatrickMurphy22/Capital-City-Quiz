@@ -119,6 +119,7 @@ const easyFacts = [
 
 ]
 
+//Easy game mode function, calls all functions in one function.
 function easyGame(){
     displayQuestion();
     playerPick();
@@ -126,6 +127,7 @@ function easyGame(){
     endGame();
 }
 
+//function to display country and relative citys all in random order, then removes called array.
 function displayQuestion(){
     
     let randomise = Math.floor(Math.random() * easyCountrys.length )
@@ -147,6 +149,8 @@ function displayQuestion(){
     }
 }
 
+
+//Add eventlistener to all buttons and if the right button is selected change background color and increase score.
 function playerPick(){
     
     for(let i = 0; i < 4; i++){
@@ -166,6 +170,7 @@ function playerPick(){
     }
 }
 
+// Adds event listener that increases round number and changes question.
 function nextRound(){
 
     next.addEventListener("click", () => {
@@ -182,6 +187,7 @@ function nextRound(){
     })
 }
 
+// Manipulates the DOM after 10 rounds is reached to display score card
 function endGame(){
 
     if(round === 10){
@@ -220,4 +226,5 @@ function endGame(){
     }
 }
 
+// Calls end game function containing all relative functions
 easyGame();
