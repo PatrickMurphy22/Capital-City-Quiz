@@ -14,6 +14,7 @@ let funFacts;
 let finalScore = document.getElementById("final-score");
 let result = document.getElementById("title");
 let buttons = document.getElementsByClassName("easyAnswer");
+let next = document.getElementById("next");
 
 // List of EASY countrys in array format.
 const easyCountrys= [
@@ -90,6 +91,7 @@ const easyCountrys= [
     },
 ]
 
+//Fun Facts in Array format.
 const easyFacts = [
     {
         fact: (" Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
@@ -116,6 +118,7 @@ function easyGame(){
     displayQuestion();
     playerPick();
     nextRound();
+    endGame();
 }
 
 function displayQuestion(){
@@ -160,7 +163,6 @@ function playerPick(){
 
 function nextRound(){
 
-    let next = document.getElementById("next");
     next.addEventListener("click", () => {
         displayQuestion();
         console.log(buttons)
@@ -171,42 +173,47 @@ function nextRound(){
         }
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`)
-            if(round === 10){
-                next.innerHTML = "Finish"
-                next.id = "finish"
-                next.className = "finish"
-                let finish = document.getElementById("finish")
-                finish.addEventListener("click", () =>{
-                    for(let i = 0; i < 4; i++){
-                        let hideButtons = document.getElementsByClassName("easyAnswer");
-                        hideButtons[i].style.visibility = "hidden"
-                        hideButtons[i].style.height = "0vh"
-                    }
-                    let qBox = document.getElementById("question-box")
-                    qBox.style.visibility = "hidden"
-                    qBox.style.height = "0vh"
-                    document.getElementById("score-container").removeAttribute("hidden")
-                    document.getElementById("score-box").style.height = "0vh"
-                    document.getElementById("answer-container").style.height = "40vh"
-                    document.getElementById("score-box").style.visibility = "hidden"
-                    finish.style.visibility = "hidden"
-
-                    finalScore.innerHTML = score;
-                    if(score < 5 ){
-                        result.innerHTML = "Do you even know where your house is??"
-                    }else if(score <= 7 ){
-                        result.innerHTML = "You're far from a globe trotter, but youre getting there"
-                    }else{
-                        result.innerHTML = "Not bad, maybe you are ready to take the next step..."
-                    }
-
-                    let fun = document.getElementById("fun-fact");
-                    let random = Math.floor(Math.random() * easyFacts.length)
-                    funFacts = easyFacts[random]
-                    fun.innerHTML = funFacts.fact
-                })
-            }
+        endGame();
     })
+}
+
+function endGame(){
+
+    if(round === 10){
+        next.innerHTML = "Finish"
+        next.id = "finish"
+        next.className = "finish"
+        let finish = document.getElementById("finish")
+        finish.addEventListener("click", () =>{
+            for(let i = 0; i < 4; i++){
+                let hideButtons = document.getElementsByClassName("easyAnswer");
+                hideButtons[i].style.visibility = "hidden"
+                hideButtons[i].style.height = "0vh"
+            }
+            let qBox = document.getElementById("question-box")
+            qBox.style.visibility = "hidden"
+            qBox.style.height = "0vh"
+            document.getElementById("score-container").removeAttribute("hidden")
+            document.getElementById("score-box").style.height = "0vh"
+            document.getElementById("answer-container").style.height = "40vh"
+            document.getElementById("score-box").style.visibility = "hidden"
+            finish.style.visibility = "hidden"
+
+            finalScore.innerHTML = score;
+            if(score < 5 ){
+                result.innerHTML = "Do you even know where your house is??"
+            }else if(score <= 7 ){
+                result.innerHTML = "You're far from a globe trotter, but youre getting there"
+            }else{
+                result.innerHTML = "Not bad, maybe you are ready to take the next step..."
+            }
+
+            let fun = document.getElementById("fun-fact");
+            let random = Math.floor(Math.random() * easyFacts.length)
+            funFacts = easyFacts[random]
+            fun.innerHTML = funFacts.fact
+        })
+    }
 }
 
 easyGame();
