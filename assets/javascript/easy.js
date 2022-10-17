@@ -161,11 +161,13 @@ function playerChoice(){
                 if(buttons[i].id === "correct"){
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`)
+                    document.body.style.backgroundColor = "green"
                     console.log(`${currentQuestion.citys[i]} is correct`)
                 }
                 }else{
-                buttons[i].id = "wrong"
-                console.log(`${currentQuestion.citys[i]} is wrong`)
+                    document.body.style.backgroundColor = "red"
+                    buttons[i].id = "wrong"
+                    console.log(`${currentQuestion.citys[i]} is wrong`)
                 }
             }  
         }   
@@ -180,6 +182,7 @@ function nextRound(){
         document.body.style.backgroundColor = "rgb(0, 222, 230)"
         for(let i = 0; i < 4; i++){
             buttons[i].removeAttribute("id")
+            buttons.removeEventListener
         }
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`)
