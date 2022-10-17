@@ -122,7 +122,6 @@ const easyFacts = [
 //Easy game mode function, calls all functions in one function.
 function easyGame(){
     displayQuestion();
-    playerChoice();
     nextRound();
     endGame();
 }
@@ -163,24 +162,20 @@ function playerChoice(){
                 buttons[i].style.backgroundColor = "green"
                 document.body.style.backgroundColor = "green"
                 buttons[i].style.color = "white"
-                removeListener();
+                console.log(`${currentQuestion.citys[i]} is correct`)
                 }else{
-                removeListener();
                 buttons[i].style.backgroundColor = "red"
                 document.body.style.backgroundColor = "red"
                 buttons[i].style.color = "white"
+                console.log(`${currentQuestion.citys[i]} is wrong`)
                 }
-            }
-            function removeListener(){ 
-                buttons[i].removeEventListener("click", playerPick)
-            }
-        }
-
-    }
+            }  
+        }   
+    }    
 
 // Adds event listener that increases round number and changes question.
 function nextRound(){
-
+    playerChoice();
     next.addEventListener("click", () => {
         displayQuestion();
         console.log(buttons)
