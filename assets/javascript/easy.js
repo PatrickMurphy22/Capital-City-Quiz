@@ -122,7 +122,7 @@ const easyFacts = [
 //Easy game mode function, calls all functions in one function.
 function easyGame(){
     displayQuestion();
-    playerPick();
+    playerChoice();
     nextRound();
     endGame();
 }
@@ -151,24 +151,32 @@ function displayQuestion(){
 
 
 //Add eventlistener to all buttons and if the right button is selected change background color and increase score.
-function playerPick(){
+function playerChoice(){
     
     for(let i = 0; i < 4; i++){
-        buttons[i].addEventListener("click", ()=> {
+        buttons[i].addEventListener("click", playerPick )
+
+        function playerPick(){
             if(currentQuestion.capital === currentQuestion.citys[i]){
                 score++;
                 document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
                 buttons[i].style.backgroundColor = "green"
                 document.body.style.backgroundColor = "green"
                 buttons[i].style.color = "white"
-            }else{
+                removeListener();
+                }else{
+                removeListener();
                 buttons[i].style.backgroundColor = "red"
                 document.body.style.backgroundColor = "red"
                 buttons[i].style.color = "white"
+                }
             }
-        });
+            function removeListener(){ 
+                buttons[i].removeEventListener("click", playerPick)
+            }
+        }
+
     }
-}
 
 // Adds event listener that increases round number and changes question.
 function nextRound(){
@@ -186,6 +194,7 @@ function nextRound(){
         endGame();
     })
 }
+
 
 // Manipulates the DOM after 10 rounds is reached to display score card
 function endGame(){
