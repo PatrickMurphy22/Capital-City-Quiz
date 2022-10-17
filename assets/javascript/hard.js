@@ -5,7 +5,7 @@ document.getElementById("round").innerHTML = (`Round: ${round}/10`)
 
 // Add SCORE variable and set to 1.
 let score = 0;
-document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
+document.getElementById("score").innerHTML = (`Score: ${score}/10`)
 
 // Set variables to undefined to use throught code.
 let currentQuestion;
@@ -163,7 +163,7 @@ function playerChoice(){
         function playerPick(){
             if(currentQuestion.capital === currentQuestion.citys[i]){
                 score++;
-                document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
+                document.getElementById("score").innerHTML = (`Score: ${score}/10`)
                 buttons[i].style.backgroundColor = "green"
                 document.body.style.backgroundColor = "green"
                 buttons[i].style.color = "white"

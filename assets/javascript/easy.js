@@ -4,7 +4,7 @@ document.getElementById("round").innerHTML = (`Round: ${round}/10`)
 
 // Add SCORE variable and set to 1.
 let score = 0;
-document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
+document.getElementById("score").innerHTML = (`Score: ${score}/10`)
 
 // Set variables to undefined to use throught code.
 let currentQuestion;
@@ -156,17 +156,15 @@ function playerChoice(){
         buttons[i].addEventListener("click", playerPick )
 
         function playerPick(){
-            if(currentQuestion.capital === currentQuestion.citys[i]){
-                score++;
-                document.getElementById("score").innerHTML = (`Sore: ${score}/10`)
-                buttons[i].style.backgroundColor = "green"
-                document.body.style.backgroundColor = "green"
-                buttons[i].style.color = "white"
-                console.log(`${currentQuestion.citys[i]} is correct`)
+            if(currentQuestion.capital == currentQuestion.citys[i]){
+                buttons[i].id = "correct"
+                if(buttons[i].id === "correct"){
+                    score++;
+                    document.getElementById("score").innerHTML = (`Score: ${score}/10`)
+                    console.log(`${currentQuestion.citys[i]} is correct`)
+                }
                 }else{
-                buttons[i].style.backgroundColor = "red"
-                document.body.style.backgroundColor = "red"
-                buttons[i].style.color = "white"
+                buttons[i].id = "wrong"
                 console.log(`${currentQuestion.citys[i]} is wrong`)
                 }
             }  
@@ -181,8 +179,7 @@ function nextRound(){
         console.log(buttons)
         document.body.style.backgroundColor = "rgb(0, 222, 230)"
         for(let i = 0; i < 4; i++){
-            buttons[i].style.backgroundColor = "white"
-            buttons[i].style.color = "blue"
+            buttons[i].removeAttribute("id")
         }
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`)

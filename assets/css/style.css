@@ -251,6 +251,16 @@
     color:rgb(21, 87, 111);
 }
 
+#correct{
+    background-color: green;
+    color: white;
+}
+
+#wrong{
+    color: white;
+    background-color: red;
+}
+
 
     /* FOOTER */
 
