@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     font-family: prompt, sans-serif;
+
 }
 
 .hidden{
@@ -23,7 +24,7 @@
     height: 6vh;
     padding-top: 10px;
     text-align: center;
-    color:rgb(233, 106, 21);
+    color:rgb(223, 66, 46);
     text-shadow: 2px 2px 2px rgb(172, 170, 170);
 }
 
@@ -124,8 +125,7 @@
 
 #score-box{
     text-align: center;
-    margin: 10px 0 5px 0;
-    font-size: 17.5px;
+    font-size: 22.5px;
     font-weight: 700;
 }
 

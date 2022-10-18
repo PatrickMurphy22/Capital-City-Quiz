@@ -6,6 +6,12 @@ document.getElementById("round").innerHTML = (`Round: ${round}/10`);
 let score = 0;
 document.getElementById("score").innerHTML = (`Score: ${score}/10`);
 
+// Set variables to undefined to use throught code.
+let currentEasyQuestion;
+let currentMedQuestion;
+let currentHardQuestion;
+let funFacts;
+
 // added DOM to variables to use throughout code
 let finalScore = document.getElementById("final-score");
 let result = document.getElementById("title");
@@ -24,7 +30,24 @@ let medMode = document.getElementById("medium-container");
 let hardMode = document.getElementById("hard-container");
 let header = document.getElementById("header-box");
 
+function resetRound(){
+    header.style.color = "white";
+    header.style.fontSize = "30px"
+    header.innerHTML = "Capital Quiz"
+}
+function correctChoice(){
+    header.style.backgroundColor = "rgb(19, 66, 27)"
+    header.innerHTML = "-CORRECT-"
+    header.style.fontSize = "30px"
+    gameBox.style.backgroundColor = "green";
+}
 
+function wrongChoice(){
+    header.style.backgroundColor = "rgb(77, 2, 2)"
+    header.innerHTML = "-WRONG-"
+    header.style.fontSize = "30px"
+    gameBox.style.backgroundColor = "red";
+}
 function selectionMenu(){
 
     for(let i = 0; i < buttons.length; i++){
@@ -38,12 +61,6 @@ function selectionMenu(){
         location.href ="index.html"
     })
 };
-
-// Set variables to undefined to use throught code.
-let currentEasyQuestion;
-let currentMedQuestion;
-let currentHardQuestion;
-let funFacts;
 
 //Adds event listener to start Easy Mode
 easyMode.addEventListener("click", () =>{
@@ -90,8 +107,8 @@ hardMode.addEventListener("click", () =>{
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
     gameBox.style.height = "80vh";
-    gameBox.style.backgroundColor = "rgba(153, 6, 6)";
-    header.style.backgroundColor = "rgb(73, 13, 13)";
+    gameBox.style.backgroundColor = "rgba(180, 6, 6)";
+    header.style.backgroundColor = "rgb(100, 10, 10)";
     header.style.color = "white";
     qBox.style.height = "20vh";
     scoreBox.style.height = "8vh";
@@ -176,16 +193,16 @@ const easyCountrys= [
 //Fun Facts in Array format to dispaly at end of EASYGAME.
 const easyFacts = [
     {
-        fact: (" Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
+        fact: ("Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
     },
     {
-        fact: ("Everyone who lives in Germany, even foreigners, can attend college tuition-free. ")
+        fact: ("Tokyo is the most populated city in the world, with more than 38 million people.")
     },
     {
         fact: ("Some say tea is life, British people reportedly drink 165 million cups of tea a day")
     },
     {
-        fact: ("France is the most visited country in the world with 89 million annual tourists.")
+        fact: ("All of china is on beijing time despite geographically spanning over 5 time zones.")
     },
     {
         fact: ("Naples of course, is the birthplace of pizza ")
@@ -224,9 +241,9 @@ const mediumCountrys = [
         capital:("Kuala Lumpur")
     },
     {
-        country:("Ghana"),
-        citys:["Accra","Kumasi","Cape Coast","Tamale"],
-        capital:("Accra")
+        country:("India"),
+        citys:["New Delhi","Mumbai","Kolkata","Chennai"],
+        capital:("New Delhi")
     },
     {
         country:("Iraq"),
@@ -249,9 +266,9 @@ const mediumCountrys = [
         capital:("Rabat")
     },
     {
-        country:("Nepal"),
-        citys:["Kathmandu","Pokhara","Lalitpur","Biratnagar"],
-        capital:("Kathmandu")
+        country:("Eygpt"),
+        citys:["Cairo","Alexandira","Giza","Suez"],
+        capital:("Cairo")
     },
     {
         country:("Peru"),
@@ -274,25 +291,26 @@ const mediumCountrys = [
         capital:("Hanoi")
     },
 ]
+
 //Fun Facts in Array format to dispaly at end of MEDIUMGAME.
 const mediumFacts = [
     {
-        fact: (" Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
+        fact: ("Australia is the continent in the world to have no active volcanoes.")
     },
     {
-        fact: ("Everyone who lives in Germany, even foreigners, can attend college tuition-free. ")
+        fact: ("New Zealand was the first self-governing nation to give women the right to vote in 1893.")
     },
     {
-        fact: ("Some say tea is life, British people reportedly drink 165 million cups of tea a day")
+        fact: ("Alexandria in Egypt shares its name with Alexander the Great.")
     },
     {
-        fact: ("France is the most visited country in the world with 89 million annual tourists.")
+        fact: ("It snows in the Sahara Desert.")
     },
     {
-        fact: ("Naples of course, is the birthplace of pizza ")
+        fact: ("Iraq is responsible for the development of the oldest known writing system.")
     },
     {
-        fact: ("Believe it or not, there are no leprechauns in Ireland")
+        fact: ("Around 70 tribes with 30 various dialects reside in Kenya.")
     },
 
 ]
@@ -379,22 +397,22 @@ const hardCountrys = [
 ///Fun Facts in Array format to dispaly at end of HARDGAME.
 const hardFacts = [
     {
-        fact: (" Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
+        fact: ("Chad is branded as the Dead Heart of Africa.")
     },
     {
-        fact: ("Everyone who lives in Germany, even foreigners, can attend college tuition-free. ")
+        fact: ("Mount Everest is bigger now than the last time it was measured.")
     },
     {
-        fact: ("Some say tea is life, British people reportedly drink 165 million cups of tea a day")
+        fact: ("North Korea and Cuba are the only places you can't buy Coca-Cola.")
     },
     {
-        fact: ("France is the most visited country in the world with 89 million annual tourists.")
+        fact: ("More than 52% of the world's population is under 30 years old.")
     },
     {
-        fact: ("Naples of course, is the birthplace of pizza ")
+        fact: ("Around one in every 200 men are direct descendants of Genghis Khan.")
     },
     {
-        fact: ("Believe it or not, there are no leprechauns in Ireland")
+        fact: ("Toby Flenderson is the Scranton Strangler")
     },
 
 ]
@@ -454,13 +472,13 @@ function easyChoice(){
                 if(buttons[i].id === "correct"){
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
-                    gameBox.style.backgroundColor = "green";
                     buttons[i].disabled = true
+                    correctChoice()
                 }
                 }else{
-                    gameBox.style.backgroundColor = "red";
                     buttons[i].id = "wrong";
                     buttons[i].disabled = true;
+                    wrongChoice();
                 }
             })  
         }   
@@ -470,11 +488,12 @@ function easyRound(){
 
     next.addEventListener("click", () => {
         displayEasyQuestion();
+        resetRound();
+        header.style.backgroundColor = "rgb(21, 87, 111)";
         gameBox.style.backgroundColor = "rgb(0, 222, 230)";
         for(let i = 0; i < 4; i++){
             buttons[i].removeAttribute("id");
             buttons[i].disabled = false;
-
         }
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`);
@@ -558,13 +577,13 @@ function medChoice(){
                 if(buttons[i].id === "correct"){
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
-                    gameBox.style.backgroundColor = "green";
                     buttons[i].disabled = true;
+                    correctChoice()
                 }
                 }else{
-                    gameBox.style.backgroundColor = "red";
                     buttons[i].id = "wrong";
                     buttons[i].disabled = true;
+                    wrongChoice();
                 }
             })  
         }   
@@ -576,6 +595,8 @@ function medRound(){
 
     next.addEventListener("click", () => {
         displayMedQuestion();
+        resetRound();
+        header.style.backgroundColor = "rgb(97, 30, 94)";
         gameBox.style.backgroundColor = "rgb(174, 46, 212)";
         for(let i = 0; i < 4; i++){
             buttons[i].removeAttribute("id");
@@ -614,11 +635,11 @@ function endMedGame(){
 
             finalScore.innerHTML = score;
             if(score < 5 ){
-                result.innerHTML = "I suppose you think Rome is a country??";
+                result.innerHTML = "LOL, I suppose you think Africa is a country??";
             }else if(score <= 7 ){
-                result.innerHTML = "Its okay, you're average at best..";
+                result.innerHTML = "They didn't lie when they said you're average at best..";
             }else{
-                result.innerHTML = "Okay okay, maybe you arent an idiot after all";
+                result.innerHTML = "Okay then, maybe you are not an idiot after all";
             }
 
             let fun = document.getElementById("fun-fact");
@@ -662,16 +683,13 @@ function hardChoice(){
                 if(buttons[i].id === "correct"){
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
-                    gameBox.style.backgroundColor = "green";
                     buttons[i].disabled = true;
-                    header.innerHTML = "Correct"
-                    header.style.backgroundColor = "rgb(17, 65, 15)";
-                    header.style.fontSize = "30px"
+                    correctChoice();
                 }
                 }else{
-                    gameBox.style.backgroundColor = "red";
                     buttons[i].id = "wrong";
                     buttons[i].disabled = true;
+                    wrongChoice();
                 }
             })  
         }   
@@ -684,7 +702,9 @@ function hardRound(){
 
     next.addEventListener("click", () => {
         displayHardQuestion();
-        gameBox.style.backgroundColor = "rgba(172, 20, 20, 0.993)";
+        resetRound();
+        header.style.backgroundColor = "rgb(100, 10, 10)";
+        gameBox.style.backgroundColor = "rgba(153, 6, 6)";
         for(let i = 0; i < 4; i++){
             buttons[i].removeAttribute("id");
             buttons[i].disabled = false;
@@ -722,11 +742,11 @@ function endHardGame(){
 
             finalScore.innerHTML = score;
             if(score < 5 ){
-                result.innerHTML = "Ha Ha Ha I knew it.. Pathetic effort to be honest";
+                result.innerHTML = "Ha Ha Ha I knew it.. Pathetic effort to be say the least";
             }else if(score <= 7 ){
-                result.innerHTML = "So so so close, maybe 20 more attempts and you'll get it.";
+                result.innerHTML = "So so so close, maybe 20 more attempts and you'll get there.";
             }else{
-                result.innerHTML = "Congrats you have endless amounts of useless knowledge";
+                result.innerHTML = "Congrats, you have endless amounts of useless knowledge";
             };
 
             let fun = document.getElementById("fun-fact");
