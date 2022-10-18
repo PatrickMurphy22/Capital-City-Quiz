@@ -23,18 +23,20 @@ let easyMode = document.getElementById("easy-container");
 let medMode = document.getElementById("medium-container");
 let hardMode = document.getElementById("hard-container");
 let header = document.getElementById("header-box");
-let answers = document.getElementsByClassName("answer");
+
 
 function selectionMenu(){
 
-    for(let i = 0; i < answers.length; i++){
-        answers[i].style.height = "0vh";
+    for(let i = 0; i < buttons.length; i++){
+        buttons[i].style.height = "0vh";
     }
     qBox.style.height = "0vh";
     scoreBox.style.height = "0vh";
     answerContainer.style.height = "0vh";
     gameBox.style.height = "0vh";
-
+    header.addEventListener("click", () => {
+        location.href ="index.html"
+    })
 };
 
 // Set variables to undefined to use throught code.
@@ -45,8 +47,8 @@ let funFacts;
 
 //Adds event listener to start Easy Mode
 easyMode.addEventListener("click", () =>{
-    for(let i = 0; i < answers.length; i++){
-        answers[i].style.height = "7vh";
+    for(let i = 0; i < buttons.length; i++){
+        buttons[i].style.height = "7vh";
     }
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
@@ -63,8 +65,8 @@ easyMode.addEventListener("click", () =>{
 
 //Adds event listener to start Medium Mode
 medMode.addEventListener("click", () =>{
-    for(let i = 0; i < answers.length; i++){
-        answers[i].style.height = "7vh";
+    for(let i = 0; i < buttons.length; i++){
+        buttons[i].style.height = "7vh";
     }
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
@@ -81,8 +83,8 @@ medMode.addEventListener("click", () =>{
 
 //Adds event listener to start Hard Mode
 hardMode.addEventListener("click", () =>{
-    for(let i = 0; i < answers.length; i++){
-        answers[i].style.height = "7vh";
+    for(let i = 0; i < buttons.length; i++){
+        buttons[i].style.height = "7vh";
     }
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
@@ -453,7 +455,7 @@ function easyChoice(){
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
                     gameBox.style.backgroundColor = "green";
-                    buttons[i].disabled = true;
+                    buttons[i].disabled = true
                 }
                 }else{
                     gameBox.style.backgroundColor = "red";
@@ -462,9 +464,7 @@ function easyChoice(){
                 }
             })  
         }   
-    }
-
-
+}
 // Adds event listener that increases round number and changes question.
 function easyRound(){
 
