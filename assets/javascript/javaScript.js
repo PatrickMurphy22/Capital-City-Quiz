@@ -22,6 +22,11 @@ let medMode = document.getElementById("medium-container");
 let hardMode = document.getElementById("hard-container");
 let header = document.getElementById("header-box");
 
+qBox.style.height = "0vh"
+scoreBox.style.height = "0vh"
+answerContainer.style.height = "0vh"
+gameBox.style.height = "0vh"
+
 // Set variables to undefined to use throught code.
 let currentEasyQuestion;
 let currentMedQuestion;
@@ -32,10 +37,13 @@ easyMode.addEventListener("click", () =>{
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
-    gameBox.style.height = "80vh";
+    gameBox.style.height = "85vh";
     gameBox.style.backgroundColor = "rgb(0, 222, 230)"
     header.style.backgroundColor = "rgb(21, 87, 111)"
     header.style.color = "white"
+    qBox.style.height = "20vh"
+    scoreBox.style.height = "8vh"
+    scoreBox.style.marginTop = "20px"
     easyGame();
 })
 
@@ -43,10 +51,13 @@ medMode.addEventListener("click", () =>{
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
-    gameBox.style.height = "80vh";
-    gameBox.style.backgroundColor = "rgb(0, 222, 230)"
-    header.style.backgroundColor = "rgb(21, 87, 111)"
+    gameBox.style.height = "85vh";
+    gameBox.style.backgroundColor = "rgb(174, 46, 212)"
+    header.style.backgroundColor = "rgb(97, 30, 94)"
     header.style.color = "white"
+    qBox.style.height = "20vh"
+    scoreBox.style.height = "8vh"
+    scoreBox.style.marginTop = "20px"
     mediumGame();
 })
 
@@ -54,10 +65,13 @@ hardMode.addEventListener("click", () =>{
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
-    gameBox.style.height = "80vh";
-    gameBox.style.backgroundColor = "rgb(0, 222, 230)"
-    header.style.backgroundColor = "rgb(21, 87, 111)"
+    gameBox.style.height = "85vh";
+    gameBox.style.backgroundColor = "rgba(153, 6, 6)"
+    header.style.backgroundColor = "rgb(73, 13, 13)"
     header.style.color = "white"
+    qBox.style.height = "20vh"
+    scoreBox.style.height = "8vh"
+    scoreBox.style.marginTop = "20px"
     hardGame();
 })
 

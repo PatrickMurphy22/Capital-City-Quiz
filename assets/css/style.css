@@ -23,7 +23,7 @@
 /* #easy-body #header-box{
     background-color: rgb(21, 87, 111);
     color: white;
-} */
+}
 
 #medium-body #header-box{
     background-color: rgb(97, 30, 94);
@@ -31,9 +31,9 @@
 }
 
 #hard-body #header-box{
-    background-color: rgba(68, 5, 5, 0.582);
+    background-color: rgb(73, 13, 13);
     color: white;
-}
+} */
 
 .hidden{
     visibility: hidden;
