@@ -12,51 +12,131 @@
         <header id="header-box">
             <a href="index.html"><h1>Capital Quiz</h1></a>
 </header>
-<div id="lets-play">
-    <h3>Let's Play</h3>
+<div id="difficulty-modes">
+    <div id="lets-play">
+        <h3>Let's Play</h3>
+    </div>
+
+    <div id="difficulty-settings">
+        <section id="easy-container">
+            <!-- <a href="easyMode.html"> -->
+                <div id="easy-box">
+                    <div class="easy-mode easy1">
+                        <p>Level 1</p>
+                        <h3>BEGINNER</h3>
+                    </div>
+                    <div class="easy-mode easy2">
+                        <img src="https://img.icons8.com/clouds/100/000000/play.png"/>
+                    </div>
+                </div>
+            <!-- </a> -->
+        </section>
+
+        <section id="medium-container">
+            <!-- <a href="mediumMode.html"> -->
+                <div id="medium-box">
+                    <div class="medium-mode medium1">
+                        <p>Level 2</p>
+                        <h3>JOURNEYMAN</h3>
+                    </div>
+                    <div class="medium-mode medium2">
+                        <img src="https://img.icons8.com/bubbles/100/000000/earth-planet.png"/>
+                    </div>
+                </div>
+            </a>
+        </section>
+        
+        <section id="hard-container">
+            <!-- <a href="hardMode.html"> -->
+                <div id="hard-box">
+                    <div class="hard-mode hard1">
+                        <p>Level 3</p>
+                        <h3>SEASONED</h3>
+                    </div>
+                <div class="hard-mode hard2">
+                    <img src="https://img.icons8.com/bubbles/100/000000/city-buildings.png"/>
+                </div>
+                </div>
+            </a>
+        </section>
+    </div>
 </div>
-
-<div id="difficulty-settings">
-    <section id="easy-container">
-        <a href="easyMode.html">
-            <div id="easy-box">
-                <div class="easy-mode easy1">
-                    <p>Level 1</p>
-                    <h3>BEGINNER</h3>
-                </div>
-                <div class="easy-mode easy2">
-                    <img src="https://img.icons8.com/clouds/100/000000/play.png"/>
-                </div>
-            </div>
-        </a>
+    <div id="game-mode" class="hidden"> 
+    <section id="question-box">
+        <p id="what-is"> What is the capital of:</p>
+        <p id="country"></p>
     </section>
 
-    <section id="medium-container">
-        <a href="mediumMode.html">
-            <div id="medium-box">
-                <div class="medium-mode medium1">
-                    <p>Level 2</p>
-                    <h3>JOURNEYMAN</h3>
-                </div>
-                <div class="medium-mode medium2">
-                    <img src="https://img.icons8.com/bubbles/100/000000/earth-planet.png"/>
-                </div>
-            </div>
-        </a>
+    <section id="score-box">
+    <div id="round"></div>
+    <div id="score"></div>
     </section>
-    
-    <section id="hard-container">
-        <a href="hardMode.html">
-            <div id="hard-box">
-                <div class="hard-mode hard1">
-                    <p>Level 3</p>
-                    <h3>SEASONED</h3>
-                </div>
-            <div class="hard-mode hard2">
-                <img src="https://img.icons8.com/bubbles/100/000000/city-buildings.png"/>
+    <div id="score-container" hidden>
+    <div class= score-box>
+
+        <div class="score-card score1">
+            <h2>You Scored</h2>
+            <div>
+                <h2 id="final-score"></h2>
             </div>
+            <h2>Out of 10</h2>
+        </div>
+
+        <div class="score-card score2">
+            <h2 id="title"></h2>
+        </div>
+        
+        <div class="score-card score3">
+            <h2>-Fun Fact-</h2>
+            <h4 id="fun-fact"></h4>
+        </div>
+        <button id="return"><a href="index.html">Return</a></button>
+    </div>
+    </div>
+
+    <section id="answer-container">
+    <div class="answerbox">
+
+        <button class="answer ez-ans1">
+            <div id="a">
+                <h4>A</h4>
             </div>
-        </a>
+            <div class="ans">
+                <h3></h3>
+            </div>
+        </button>
+
+        <button class="answer ez-ans2">
+            <div id="b">
+                <h4>B</h4>
+            </div>
+            <div class="ans">
+                <h3></h3>
+            </div>
+        </button>
+
+        <button class="answer ez-ans3">
+            <div id="c">
+                <h4>C</h4>
+            </div>
+            <div class="ans">
+                <h3></h3>
+            </div>
+        </button>
+
+        <button class="answer ez-ans4">
+            <div id="d">
+                <h4>D</h4>
+            </div>
+            <div class="ans">
+                <h3></h3>
+            </div>
+            </button>
+        
+        <div class="next">
+            <h3 id="next">Next</h3>
+        </div>
+    </div>
     </section>
 </div>
 <footer>
@@ -72,6 +152,7 @@
     </div>
 </div>
 </footer>
+<script src="assets/javascript/javaScript.js"></script>
 <script src="https://kit.fontawesome.com/d2b7aff9cc.js" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -20,10 +20,10 @@
     background-color:rgba(172, 20, 20, 0.993);
 }
 
-#easy-body #header-box{
+/* #easy-body #header-box{
     background-color: rgb(21, 87, 111);
     color: white;
-}
+} */
 
 #medium-body #header-box{
     background-color: rgb(97, 30, 94);
@@ -33,6 +33,15 @@
 #hard-body #header-box{
     background-color: rgba(68, 5, 5, 0.582);
     color: white;
+}
+
+.hidden{
+    visibility: hidden;
+    height:0vh;
+}
+
+#game-mode{
+    border: solid 0.1px white;
 }
     /* HEADER */
 
@@ -52,7 +61,7 @@
 #header-box a{
     text-decoration: none;
     color:rgb(211, 18, 18);
-    text-shadow: 5px 5px 5px rgb(172, 170, 170);
+    text-shadow: 2px 2px 2px rgb(172, 170, 170);
     
 }
 
@@ -141,7 +150,7 @@
     font-weight: 700;
 }
 
-#easy-country, #medium-country, #hard-country{
+#country{
     font-size: 20px;
     text-align: center;
     font-weight: 700;
@@ -157,13 +166,13 @@
 }
   /* ANSWERS */
 
-  #answer-container{
+#answer-container{
     height: 50vh;
     width: 70vw;
     margin: auto;
 }
 
-.easyAnswer, .mediumAnswer, .hardAnswer{
+.answer{
     border: solid 1px rgb(255, 255, 255);
     height: 7vh;
     width: 71vw;
@@ -213,21 +222,6 @@
 
 #d{
     background-color: rgb(194, 0, 126);
-}
-
-.easyAnswer:hover{
-    background-color: rgb(21, 87, 111);
-    color: white;
-}
-
-.mediumAnswer:hover{
-    background-color:  rgb(2, 111, 22);
-    color: white;
-}
-
-.hardAnswer:hover{
-    background-color: rgb(110, 0, 0);
-    color: white;
 }
 .next{
     border: solid 1px rgb(255, 255, 255);
@@ -322,24 +316,6 @@
     border: solid black 2px;
     background-image: linear-gradient(to right, rgb(12, 188, 211), rgb(8, 245, 233) );
     box-shadow: 10px 5px 5px rgb(113, 113, 113);
-    height: 17.5vh;
-    text-align: center;
-}
-
-.med-score-card{
-    border: solid black 2px;
-    color: rgb(247, 241, 241);
-    background-image: linear-gradient(to right, rgb(66, 7, 68), rgb(228, 10, 217) );
-    box-shadow: 10px 5px 5px rgb(95, 1, 87);
-    height: 17.5vh;
-    text-align: center;
-}
-
-.hard-score-card{
-    border: solid black 2px;
-    color: rgb(247, 241, 241);
-    background-image: linear-gradient(to right, rgb(238, 30, 30), rgb(255, 119, 78) );
-    box-shadow: 10px 5px 5px rgb(105, 5, 5);
     height: 17.5vh;
     text-align: center;
 }
