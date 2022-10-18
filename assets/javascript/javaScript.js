@@ -13,6 +13,7 @@ let buttons = document.getElementsByClassName("answer");
 let next = document.getElementById("next");
 let scoreContainer = document.getElementById("score-container");
 let scoreBox = document.getElementById("score-box");
+let scoreCard = document.getElementsByClassName("score-card");
 let answerContainer = document.getElementById("answer-container");
 let qBox = document.getElementById("question-box");
 let gameBox = document.getElementById("game-mode");
@@ -427,11 +428,11 @@ function easyChoice(){
                 if(buttons[i].id === "correct"){
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`)
-                    document.body.style.backgroundColor = "green"
+                    gameBox.style.backgroundColor = "green"
                     buttons[i].disabled = true;
                 }
                 }else{
-                    document.body.style.backgroundColor = "red"
+                    gameBox.style.backgroundColor = "red"
                     buttons[i].id = "wrong"
                     buttons[i].disabled = true;
                 }
@@ -445,7 +446,7 @@ function easyRound(){
 
     next.addEventListener("click", () => {
         displayEasyQuestion();
-        document.body.style.backgroundColor = "rgb(0, 222, 230)"
+        gameBox.style.backgroundColor = "rgb(0, 222, 230)"
         for(let i = 0; i < 4; i++){
             buttons[i].removeAttribute("id");
             buttons[i].disabled = false;
@@ -470,6 +471,11 @@ function endEasyGame(){
                 let hideButtons = document.getElementsByClassName("answer");
                 hideButtons[i].style.visibility = "hidden"
                 hideButtons[i].style.height = "0vh"
+            }
+
+            for(let i = 0; i < 3; i++){
+                scoreCard[i].style.background = "linear-gradient(to right, rgb(27, 98, 190), rgb(8, 216, 216) )"
+                scoreCard[i].style.color = "white"
             }
             document.querySelector(".next").style.visibility = "hidden"
             qBox.style.visibility = "hidden"
@@ -532,11 +538,11 @@ function medChoice(){
                 if(buttons[i].id === "correct"){
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`)
-                    document.body.style.backgroundColor = "green"
+                    gameBox.style.backgroundColor = "green"
                     buttons[i].disabled = true;
                 }
                 }else{
-                    document.body.style.backgroundColor = "red"
+                    gameBox.style.backgroundColor = "red"
                     buttons[i].id = "wrong"
                     buttons[i].disabled = true;
                 }
@@ -550,7 +556,7 @@ function medRound(){
 
     next.addEventListener("click", () => {
         displayMedQuestion();
-        document.body.style.backgroundColor = "rgb(174, 46, 212)"
+        gameBox.style.backgroundColor = "rgb(174, 46, 212)"
         for(let i = 0; i < 4; i++){
             buttons[i].removeAttribute("id");
             buttons[i].disabled = false;
@@ -574,6 +580,11 @@ function endMedGame(){
                 let hideButtons = document.getElementsByClassName("answer");
                 hideButtons[i].style.visibility = "hidden"
                 hideButtons[i].style.height = "0vh"
+            }
+            
+            for(let i = 0; i < 3; i++){
+                scoreCard[i].style.background = "linear-gradient(to right, rgb(58, 3, 70), rgb(173, 16, 194))"
+                scoreCard[i].style.color = "white"
             }
             document.querySelector(".next").style.visibility = "hidden"
             qBox.style.visibility = "hidden"
@@ -635,11 +646,11 @@ function hardChoice(){
                 if(buttons[i].id === "correct"){
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`)
-                    document.body.style.backgroundColor = "green"
+                    gameBox.style.backgroundColor = "green"
                     buttons[i].disabled = true;
                 }
                 }else{
-                    document.body.style.backgroundColor = "red"
+                    gameBox.style.backgroundColor = "red"
                     buttons[i].id = "wrong"
                     buttons[i].disabled = true;
                 }
@@ -653,7 +664,7 @@ function hardRound(){
 
     next.addEventListener("click", () => {
         displayHardQuestion();
-        document.body.style.backgroundColor= "rgba(172, 20, 20, 0.993)"
+        gameBox.style.backgroundColor = "rgba(172, 20, 20, 0.993)"
 
         for(let i = 0; i < 4; i++){
             buttons[i].removeAttribute("id");
@@ -678,6 +689,11 @@ function endHardGame(){
                 let hideButtons = document.getElementsByClassName("answer");
                 hideButtons[i].style.visibility = "hidden"
                 hideButtons[i].style.height = "0vh"
+            }
+
+            for(let i = 0; i < 3; i++){
+                scoreCard[i].style.background = "linear-gradient(to right, rgb(73, 13, 13), rgba(153, 6, 6))"
+                scoreCard[i].style.color = "white"
             }
             document.querySelector(".next").style.visibility = "hidden"
             qBox.style.visibility = "hidden"
