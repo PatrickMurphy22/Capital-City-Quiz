@@ -614,11 +614,11 @@ function endMedGame(){
 
             finalScore.innerHTML = score;
             if(score < 5 ){
-                result.innerHTML = "Do you even know where your house is??";
+                result.innerHTML = "I suppose you think Rome is a country??";
             }else if(score <= 7 ){
-                result.innerHTML = "You're far from a globe trotter, but you're getting there";
+                result.innerHTML = "Its okay, you're average at best..";
             }else{
-                result.innerHTML = "Not bad, maybe you are ready to take the next step...";
+                result.innerHTML = "Okay okay, maybe you arent an idiot after all";
             }
 
             let fun = document.getElementById("fun-fact");
@@ -664,6 +664,9 @@ function hardChoice(){
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
                     gameBox.style.backgroundColor = "green";
                     buttons[i].disabled = true;
+                    header.innerHTML = "Correct"
+                    header.style.backgroundColor = "rgb(17, 65, 15)";
+                    header.style.fontSize = "30px"
                 }
                 }else{
                     gameBox.style.backgroundColor = "red";
@@ -675,13 +678,13 @@ function hardChoice(){
     }    
 
 
+
 // Adds event listener that increases round number and changes question.
 function hardRound(){
 
     next.addEventListener("click", () => {
         displayHardQuestion();
         gameBox.style.backgroundColor = "rgba(172, 20, 20, 0.993)";
-
         for(let i = 0; i < 4; i++){
             buttons[i].removeAttribute("id");
             buttons[i].disabled = false;
@@ -719,11 +722,11 @@ function endHardGame(){
 
             finalScore.innerHTML = score;
             if(score < 5 ){
-                result.innerHTML = "Do you even know where your house is??";
+                result.innerHTML = "Ha Ha Ha I knew it.. Pathetic effort to be honest";
             }else if(score <= 7 ){
-                result.innerHTML = "You're far from a globe trotter, but you're getting there";
+                result.innerHTML = "So so so close, maybe 20 more attempts and you'll get it.";
             }else{
-                result.innerHTML = "Not bad, maybe you are ready to take the next step...";
+                result.innerHTML = "Congrats you have endless amounts of useless knowledge";
             };
 
             let fun = document.getElementById("fun-fact");
