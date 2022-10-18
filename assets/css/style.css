@@ -86,7 +86,6 @@
 
 #easy-box{
     background-image: linear-gradient(to right, rgb(76, 80, 179), rgb(66, 164, 225) );
-
     border-radius: 20px;
 }
 
@@ -96,7 +95,8 @@
 }
 
 #hard-box{
-    background-image: linear-gradient(to right, rgb(255, 0, 85), rgb(255, 147, 89) );    border-radius: 20px;
+    background-image: linear-gradient(to right, rgb(255, 0, 85), rgb(255, 147, 89) ); 
+    border-radius: 20px;
 }
 
 #question-box{
@@ -133,6 +133,7 @@
     font-size: 17.5px;
     font-weight: 700;
 }
+
   /* ANSWERS */
 
 #answer-container{
@@ -225,9 +226,9 @@
     /* FOOTER */
 
     footer{
-        margin-top: 20px;
+       
         width: 100vw;
-        height: 120px;
+        height: 150px;
         background-image:linear-gradient(to right, rgb(42, 41, 41), rgb(78, 78, 78));
         letter-spacing: 4px;
         border-top: 2px white solid;
@@ -247,6 +248,7 @@
         width: 100vw;
         font-size: 10px;
         margin: auto;
+        margin-top: 30px;
         text-align: center;
     }
     

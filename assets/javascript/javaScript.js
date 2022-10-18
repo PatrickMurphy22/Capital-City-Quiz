@@ -10,6 +10,7 @@ document.getElementById("score").innerHTML = (`Score: ${score}/10`)
 let finalScore = document.getElementById("final-score");
 let result = document.getElementById("title");
 let buttons = document.getElementsByClassName("answer");
+let hideButtons = document.getElementsByClassName("answer");
 let next = document.getElementById("next");
 let scoreContainer = document.getElementById("score-container");
 let scoreBox = document.getElementById("score-box");
@@ -22,11 +23,19 @@ let easyMode = document.getElementById("easy-container");
 let medMode = document.getElementById("medium-container");
 let hardMode = document.getElementById("hard-container");
 let header = document.getElementById("header-box");
+let answers = document.getElementsByClassName("answer");
 
-qBox.style.height = "0vh"
-scoreBox.style.height = "0vh"
-answerContainer.style.height = "0vh"
-gameBox.style.height = "0vh"
+function selectionMenu(){
+
+    for(let i = 0; i < answers.length; i++){
+        answers[i].style.height = "0vh"
+    }
+    qBox.style.height = "0vh"
+    scoreBox.style.height = "0vh"
+    answerContainer.style.height = "0vh"
+    gameBox.style.height = "0vh"
+
+}
 
 // Set variables to undefined to use throught code.
 let currentEasyQuestion;
@@ -34,11 +43,15 @@ let currentMedQuestion;
 let currentHardQuestion;
 let funFacts;
 
+//Adds event listener to start Easy Mode
 easyMode.addEventListener("click", () =>{
+    for(let i = 0; i < answers.length; i++){
+        answers[i].style.height = "7vh"
+    }
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
-    gameBox.style.height = "85vh";
+    gameBox.style.height = "80vh";
     gameBox.style.backgroundColor = "rgb(0, 222, 230)"
     header.style.backgroundColor = "rgb(21, 87, 111)"
     header.style.color = "white"
@@ -47,12 +60,15 @@ easyMode.addEventListener("click", () =>{
     scoreBox.style.marginTop = "20px"
     easyGame();
 })
-
+//Adds event listener to start Medium Mode
 medMode.addEventListener("click", () =>{
+    for(let i = 0; i < answers.length; i++){
+        answers[i].style.height = "7vh"
+    }
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
-    gameBox.style.height = "85vh";
+    gameBox.style.height = "80vh";
     gameBox.style.backgroundColor = "rgb(174, 46, 212)"
     header.style.backgroundColor = "rgb(97, 30, 94)"
     header.style.color = "white"
@@ -61,12 +77,15 @@ medMode.addEventListener("click", () =>{
     scoreBox.style.marginTop = "20px"
     mediumGame();
 })
-
+//Adds event listener to start Hard Mode
 hardMode.addEventListener("click", () =>{
+    for(let i = 0; i < answers.length; i++){
+        answers[i].style.height = "7vh"
+    }
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
-    gameBox.style.height = "85vh";
+    gameBox.style.height = "80vh";
     gameBox.style.backgroundColor = "rgba(153, 6, 6)"
     header.style.backgroundColor = "rgb(73, 13, 13)"
     header.style.color = "white"
@@ -150,7 +169,7 @@ const easyCountrys= [
         capital:("Rome")
     },
 ]
-//Fun Facts in Array format.
+//Fun Facts in Array format to dispaly at end of EASYGAME.
 const easyFacts = [
     {
         fact: (" Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
@@ -173,6 +192,7 @@ const easyFacts = [
 
 ]
 
+// List of MEDIUM countrys in array format.
 const mediumCountrys = [
     {
         country:("Afganistan"),
@@ -250,6 +270,7 @@ const mediumCountrys = [
         capital:("Hanoi")
     },
 ]
+//Fun Facts in Array format to dispaly at end of MEDIUMGAME.
 const mediumFacts = [
     {
         fact: (" Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
@@ -272,6 +293,7 @@ const mediumFacts = [
 
 ]
 
+// List of HARD countrys in array format.
 const hardCountrys = [
     {
         country:("Chad"),
@@ -350,7 +372,7 @@ const hardCountrys = [
     },
 
 ]
-//Fun Facts in Array format.
+///Fun Facts in Array format to dispaly at end of HARDGAME.
 const hardFacts = [
     {
         fact: (" Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
@@ -380,14 +402,14 @@ function easyGame(){
     easyRound();
     endEasyGame();
 }
-
+//Medium game mode function, calls all functions in one function.
 function mediumGame(){
     displayMedQuestion();
     medChoice();
     medRound();
     endMedGame();
 }
-
+//Hard game mode function, calls all functions in one function.
 function hardGame(){
     displayHardQuestion();
     hardChoice();
@@ -464,17 +486,14 @@ function endEasyGame(){
 
     if(round === 10){
         next.innerHTML = "Finish"
-        next.id = "finish"
-        let finish = document.getElementById("finish")
-        finish.addEventListener("click", () =>{
-            for(let i = 0; i < 4; i++){
-                let hideButtons = document.getElementsByClassName("answer");
+        next.addEventListener("click", () =>{
+            for(let i = 0; i < hideButtons.length; i++){
                 hideButtons[i].style.visibility = "hidden"
                 hideButtons[i].style.height = "0vh"
             }
 
-            for(let i = 0; i < 3; i++){
-                scoreCard[i].style.background = "linear-gradient(to right, rgb(27, 98, 190), rgb(8, 216, 216) )"
+            for(let i = 0; i < scoreCard.length; i++){
+                scoreCard[i].style.background = "linear-gradient(to right, rgb(21, 87, 111), rgb(8, 216, 216) )"
                 scoreCard[i].style.color = "white"
             }
             document.querySelector(".next").style.visibility = "hidden"
@@ -484,7 +503,6 @@ function endEasyGame(){
             scoreBox.style.height = "0vh"
             scoreBox.style.visibility = "hidden"
             answerContainer.style.height = "35vh"
-            finish.style.width = "0"
             
 
             finalScore.innerHTML = score;
@@ -573,16 +591,13 @@ function endMedGame(){
 
     if(round === 10){
         next.innerHTML = "Finish"
-        next.id = "finish"
-        let finish = document.getElementById("finish")
-        finish.addEventListener("click", () =>{
-            for(let i = 0; i < 4; i++){
-                let hideButtons = document.getElementsByClassName("answer");
+        next.addEventListener("click", () =>{
+            for(let i = 0; i < hideButtons.length; i++){
                 hideButtons[i].style.visibility = "hidden"
                 hideButtons[i].style.height = "0vh"
             }
             
-            for(let i = 0; i < 3; i++){
+            for(let i = 0; i < scoreCard.length; i++){
                 scoreCard[i].style.background = "linear-gradient(to right, rgb(58, 3, 70), rgb(173, 16, 194))"
                 scoreCard[i].style.color = "white"
             }
@@ -593,7 +608,6 @@ function endMedGame(){
             scoreBox.style.height = "0vh"
             scoreBox.style.visibility = "hidden"
             answerContainer.style.height = "35vh"
-            finish.style.width = "0"
             
 
             finalScore.innerHTML = score;
@@ -682,16 +696,13 @@ function endHardGame(){
 
     if(round === 10){
         next.innerHTML = "Finish"
-        next.id = "finish"
-        let finish = document.getElementById("finish")
-        finish.addEventListener("click", () =>{
-            for(let i = 0; i < 4; i++){
-                let hideButtons = document.getElementsByClassName("answer");
+        next.addEventListener("click", () =>{
+            for(let i = 0; i < hideButtons.length; i++){
                 hideButtons[i].style.visibility = "hidden"
                 hideButtons[i].style.height = "0vh"
             }
 
-            for(let i = 0; i < 3; i++){
+            for(let i = 0; i < scoreCard.length; i++){
                 scoreCard[i].style.background = "linear-gradient(to right, rgb(73, 13, 13), rgba(153, 6, 6))"
                 scoreCard[i].style.color = "white"
             }
@@ -702,7 +713,6 @@ function endHardGame(){
             scoreBox.style.height = "0vh"
             scoreBox.style.visibility = "hidden"
             answerContainer.style.height = "35vh"
-            finish.style.width = "0"
             
 
             finalScore.innerHTML = score;
@@ -721,3 +731,5 @@ function endHardGame(){
         })
     }
 }
+
+selectionMenu();
