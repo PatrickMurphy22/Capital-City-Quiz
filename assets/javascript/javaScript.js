@@ -450,6 +450,30 @@ const insultsCorrect = [
     {
         insult: ("Bears Beats, Battle Star Galactica")
     },
+    {
+        insult: ("You're So Charming When You Make An Effort.")
+    },
+    {
+        insult: ("If I throw a stick, will you leave?")
+    },
+    {
+        insult: ("It's impossible to underestimate you.")
+    },
+    {
+        insult: ("I'm not insulting you; I'm describing you.")
+    },
+    {
+        insult: ("A titanic, in a world full of icebergs.")
+    },
+    {
+        insult: ("Easy now, don't let your brains go to your head.")
+    },
+    {
+        insult: ("When you start talking, I stop listening.")
+    },
+    {
+        insult: ("I told my therapist about you.")
+    },
 ]
 
 function correctInsults(){
@@ -460,28 +484,52 @@ function correctInsults(){
 
 const insultsWrong = [
     {
-        insult: ("You remind me of Kevin from the Office")
+        insult: ("You remind me of Kevin from the Office.")
     },
     {
-        insult: ("One, Two, you havent a clue")
+        insult: ("One, Two, you havent a clue.")
     },
     {
-        insult: ("You have a walnut sized brain")
+        insult: ("You have a walnut sized brain.")
     },
     {
         insult: ("Do you even know the number for 911??")
     },
     {
-        insult: ("Why are you wasting my time")
+        insult: ("Why are you wasting my time.")
     },
     {
-        insult: ("You make Forrest Gumps IQ look High")
+        insult: ("You make Forrest Gumps IQ look High.")
     },
     {
-        insult: ("You're the Toby to my Michael Scott")
+        insult: ("You're the Toby to my Michael Scott.")
     },
     {
         insult: ("Well that was silly.")
+    },
+    {
+        insult: ("I expected nothing, but I'm still disappointed.")
+    },
+    {
+        insult: ("You're about as sharp as a sack full of soup.")
+    },
+    {
+        insult: ("You're so far behind, you thinks first..")
+    },
+    {
+        insult: ("You're the reason we have warning labels.")
+    },
+    {
+        insult: ("You're 12 cans short of a six-pack.")
+    },
+    {
+        insult: ("Proof that evolution can go in reverse")
+    },
+    {
+        insult: ("I envy everyone you have never met.")
+    },
+    {
+        insult: ("If you spoke your mind, you'd be speechless.")
     },
 ]
 
