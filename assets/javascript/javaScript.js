@@ -19,7 +19,6 @@ let fun = document.getElementById("fun-fact");
 let displayCountry = document.getElementById("country");
 let whatIs = document.getElementById("what-is");
 
-
 // Add ROUND variable and set to 1.
 let round = 1;
 document.getElementById("round").innerHTML = (`Round: ${round}/10`);

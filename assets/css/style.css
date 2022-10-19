@@ -132,7 +132,7 @@
 }
 
 .answer{
-    border: solid 1px rgb(255, 255, 255);
+    border: solid 1px rgb(167, 166, 166);
     width: 71vw;
     margin-top: 12.5px;
     border-radius: 30px;
@@ -296,7 +296,7 @@ footer{
 }
 
 .score2{
-    padding: 20px, 5px, 0, 5px ;
+    padding: 20px 5px 0px 5px ;
 }
 
 .score3{
