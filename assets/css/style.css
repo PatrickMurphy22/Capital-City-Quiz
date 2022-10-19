@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;
     font-family: prompt, sans-serif;
-
 }
 
 .hidden{
@@ -38,6 +37,7 @@
 #difficulty-settings{
     height: 75vh;
 }
+
 #easy-container, #medium-container, #hard-container{
     height: 15vh;
     width: 85vw;
@@ -91,7 +91,7 @@
 
 #question-box{
     height: 20vh;
-    width: 80vw;
+    width: 90vw;
     color: black;
     margin: auto;
     margin-top: 20px;
@@ -103,7 +103,7 @@
     text-align: center;
     font-size: 18px;
     height: 5vh;
-    width: 70vw;
+    width: 90vw;
     margin: auto;
     padding-top: 50px;
     font-weight: 700;
@@ -133,13 +133,12 @@
 
 .answer{
     border: solid 1px rgb(255, 255, 255);
-    height: 7vh;
     width: 71vw;
     margin-top: 12.5px;
     border-radius: 30px;
     display: flex;
     background-color: rgb(255, 255, 255);
-    transition: ease-in .2;
+    transition: background-color 0.7s ease-in-out;
     color: blue;
 }
 
@@ -205,13 +204,17 @@
 }
 
 #correct{
-    background-color: green;
+    background: linear-gradient(to left, green 50%, white 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
     color: white;
 }
 
 #wrong{
     color: white;
-    background-color: red;
+    background: linear-gradient(to left, red 50%, white 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
 }
 
 

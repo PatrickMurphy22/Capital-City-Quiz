@@ -16,6 +16,9 @@ let medMode = document.getElementById("medium-container");
 let hardMode = document.getElementById("hard-container");
 let header = document.getElementById("header-box");
 let fun = document.getElementById("fun-fact");
+let displayCountry = document.getElementById("country");
+let whatIs = document.getElementById("what-is");
+
 
 // Add ROUND variable and set to 1.
 let round = 1;
@@ -36,6 +39,7 @@ function resetRound(){
     header.style.color = "white";
     header.style.fontSize = "30px"
     header.innerHTML = "Capital Quiz"
+    whatIs.innerHTML = "-What is the capital of-"
 }
 
 function correctChoice(){
@@ -76,8 +80,11 @@ function endGameDom(){
     answerContainer.style.height = "35vh";
 }
 
-//Adds event listeners to start Easy/Medium/Hard Mode
-easyMode.addEventListener("click", () =>{
+function displayGame(){
+    header.style.color = "white";
+    qBox.style.height = "20vh";
+    scoreBox.style.height = "8vh";
+    scoreBox.style.marginTop = "20px";
     for(let i = 0; i < buttons.length; i++){
         buttons[i].style.height = "7vh";
     }
@@ -85,48 +92,30 @@ easyMode.addEventListener("click", () =>{
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
     gameBox.style.height = "90vh";
+}
+
+//Adds event listeners to start Easy/Medium/Hard Mode
+easyMode.addEventListener("click", () =>{
+    displayGame()
     gameBox.style.backgroundColor = "rgb(0, 222, 230)";
     header.style.backgroundColor = "rgb(21, 87, 111)";
-    header.style.color = "white";
-    qBox.style.height = "20vh";
-    scoreBox.style.height = "8vh";
-    scoreBox.style.marginTop = "20px";
     easyGame();
 });
 
 
 medMode.addEventListener("click", () =>{
-    for(let i = 0; i < buttons.length; i++){
-        buttons[i].style.height = "7vh";
-    }
-    difficultyMode.style.visibility = "hidden";
-    difficultyMode.style.height = "0vh";
-    gameBox.style.visibility = "visible";
-    gameBox.style.height = "90vh";
+    displayGame()
     gameBox.style.backgroundColor = "rgb(174, 46, 212)";
     header.style.backgroundColor = "rgb(97, 30, 94)";
-    header.style.color = "white";
-    qBox.style.height = "20vh";
-    scoreBox.style.height = "8vh";
-    scoreBox.style.marginTop = "20px";
     mediumGame();
 });
 
 
 hardMode.addEventListener("click", () =>{
-    for(let i = 0; i < buttons.length; i++){
-        buttons[i].style.height = "7vh";
-    }
-    difficultyMode.style.visibility = "hidden";
-    difficultyMode.style.height = "0vh";
-    gameBox.style.visibility = "visible";
-    gameBox.style.height = "90vh";
+
+    displayGame()
     gameBox.style.backgroundColor = "rgba(180, 6, 6)";
     header.style.backgroundColor = "rgb(100, 10, 10)";
-    header.style.color = "white";
-    qBox.style.height = "20vh";
-    scoreBox.style.height = "8vh";
-    scoreBox.style.marginTop = "20px";
     hardGame();
 });
 
@@ -324,7 +313,7 @@ const mediumCountrys = [
     {
         country:("Turkey"),
         citys:["Ankara","Istanbul","Izmir","Bursa"],
-        capital:("Akara")
+        capital:("Ankara")
     },
     {
         country:("Switzerland"),
@@ -436,7 +425,71 @@ const hardCountrys = [
     },
 
 ]
+const insultsCorrect = [
+    {
+        insult: ("Everyone knows that")
+    },
+    {
+        insult: ("Wow, you are so so amazing.. Not")
+    },
+    {
+        insult: ("Lets see how long this lasts")
+    },
+    {
+        insult: ("My 2 year old would of guessed that.")
+    },
+    {
+        insult: ("Impressive, said no one ever..")
+    },
+    {
+        insult: ("Another day, another lucky guess")
+    },
+    {
+        insult: ("2 + 2 = 4, but im sure you knew that.")
+    },
+    {
+        insult: ("Bears Beats, Battle Star Galactica")
+    },
+]
 
+function correctInsults(){
+    let random = Math.floor(Math.random() * insultsCorrect.length);
+    insults = insultsCorrect[random];
+    whatIs.innerHTML = insults.insult;
+}
+
+const insultsWrong = [
+    {
+        insult: ("You remind of Kevin from the Office")
+    },
+    {
+        insult: ("One, Two, you havent a clue")
+    },
+    {
+        insult: ("You have a walnut sized brain")
+    },
+    {
+        insult: ("Do you even know the number for 911??")
+    },
+    {
+        insult: ("Why are you wasting my time")
+    },
+    {
+        insult: ("You make Forrest Gump look intelligent")
+    },
+    {
+        insult: ("Why oh why, did they pair me with you.")
+    },
+    {
+        insult: ("Well that was silly.")
+    },
+]
+
+function wrongInsults(){
+    let random = Math.floor(Math.random() * insultsWrong.length);
+    insults = insultsWrong[random];
+    whatIs.innerHTML = insults.insult;
+}
 //Fun Facts in Array format to dispaly at end of Easy/Medium/Hard difficulties
 const easyFacts = [
     {
@@ -544,6 +597,7 @@ function hardGame(){
     endHardGame();
 }
 
+
 //function to randomly displays Country and City for Easy/Medium/Hard difficulties
 function displayEasyQuestion(){
     
@@ -552,7 +606,7 @@ function displayEasyQuestion(){
 
     easyCountrys.splice(randomise, 1);
 
-    let displayCountry = document.getElementById("country");
+    
     displayCountry.innerHTML = currentEasyQuestion.country;
 
      //credited to sebhastian.com
@@ -573,7 +627,6 @@ function displayMedQuestion(){
 
     mediumCountrys.splice(randomise, 1);
 
-    let displayCountry = document.getElementById("country");
     displayCountry.innerHTML = currentMedQuestion.country;
 
      //credited to sebhastian.com
@@ -594,7 +647,6 @@ function displayHardQuestion(){
 
     hardCountrys.splice(randomise, 1);
 
-    let displayCountry = document.getElementById("country");
     displayCountry.innerHTML = currentHardQuestion.country;
 
      //credited to sebhastian.com
@@ -615,17 +667,25 @@ function easyChoice(){
     for(let i = 0; i < 4; i++){
         buttons[i].addEventListener("click", () => {
             if(currentEasyQuestion.capital == currentEasyQuestion.citys[i]){
-                buttons[i].id = "correct";
-                if(buttons[i].id === "correct"){
+                    buttons[i].id = "correct"
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
                     buttons[i].disabled = true
+                    buttons[0].disabled = true;
+                    buttons[1].disabled = true;
+                    buttons[2].disabled = true;
+                    buttons[3].disabled = true;
+                    correctInsults();
                     correctChoice()
-                }
                 }else{
-                    buttons[i].id = "wrong";
-                    buttons[i].disabled = true;
+                    displayCountry.innerHTML = `Answer: ${currentEasyQuestion.capital}`
+                    buttons[i].id = "wrong"
+                    buttons[0].disabled = true;
+                    buttons[1].disabled = true;
+                    buttons[2].disabled = true;
+                    buttons[3].disabled = true;
                     wrongChoice();
+                    wrongInsults();
                 }
             })  
         }   
@@ -636,42 +696,58 @@ function medChoice(){
     for(let i = 0; i < 4; i++){
         buttons[i].addEventListener("click", () => {
             if(currentMedQuestion.capital == currentMedQuestion.citys[i]){
-                buttons[i].id = "correct";
-                if(buttons[i].id === "correct"){
+                    buttons[i].id = "correct"
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
-                    buttons[i].disabled = true;
+                    buttons[i].disabled = true
+                    buttons[0].disabled = true;
+                    buttons[1].disabled = true;
+                    buttons[2].disabled = true;
+                    buttons[3].disabled = true;
+                    correctInsults();
                     correctChoice()
-                }
                 }else{
-                    buttons[i].id = "wrong";
-                    buttons[i].disabled = true;
+                    displayCountry.innerHTML = `Answer: ${currentMedQuestion.capital}`
+                    buttons[i].id = "wrong"
+                    buttons[0].disabled = true;
+                    buttons[1].disabled = true;
+                    buttons[2].disabled = true;
+                    buttons[3].disabled = true;
+                    wrongInsults();
                     wrongChoice();
                 }
             })  
         }   
-}    
+} 
 
 function hardChoice(){
     
     for(let i = 0; i < 4; i++){
         buttons[i].addEventListener("click", () => {
             if(currentHardQuestion.capital == currentHardQuestion.citys[i]){
-                buttons[i].id = "correct";
-                if(buttons[i].id === "correct"){
+                buttons[i].id = "correct"
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
-                    buttons[i].disabled = true;
-                    correctChoice();
-                }
+                    buttons[i].disabled = true
+                    buttons[0].disabled = true;
+                    buttons[1].disabled = true;
+                    buttons[2].disabled = true;
+                    buttons[3].disabled = true;
+                    correctInsults();
+                    correctChoice()
                 }else{
-                    buttons[i].id = "wrong";
-                    buttons[i].disabled = true;
+                    displayCountry.innerHTML = `Answer: ${currentHardQuestion.capital}`
+                    buttons[i].id = "wrong"
+                    buttons[0].disabled = true;
+                    buttons[1].disabled = true;
+                    buttons[2].disabled = true;
+                    buttons[3].disabled = true;
+                    wrongInsults();
                     wrongChoice();
                 }
             })  
         }   
-}  
+}
 
 
 // Adds event listener that increases round number and changes question for Easy/Medium/Hard difficulties
