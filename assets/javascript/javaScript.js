@@ -451,7 +451,7 @@ const insultsCorrect = [
         insult: ("Bears Beets, Battle Star Galactica")
     },
     {
-        insult: ("You're So Charming When You Make An Effort.")
+        insult: ("You're so charming when you make an effort.")
     },
     {
         insult: ("If I throw a stick, will you leave?")
@@ -493,7 +493,7 @@ const insultsWrong = [
         insult: ("You have a walnut sized brain.")
     },
     {
-        insult: ("Do you e  ven know the number for 911??")
+        insult: ("Do you even know the number for 999??")
     },
     {
         insult: ("Why are you wasting my time.")
