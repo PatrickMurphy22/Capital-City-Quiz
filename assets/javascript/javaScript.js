@@ -425,6 +425,7 @@ const hardCountrys = [
     },
 
 ]
+
 const insultsCorrect = [
     {
         insult: ("Everyone knows that")
@@ -475,7 +476,7 @@ const insultsWrong = [
         insult: ("Why are you wasting my time")
     },
     {
-        insult: ("You make Forrest Gump look intelligent")
+        insult: ("You make Forrest Gumps IQ impressive")
     },
     {
         insult: ("Why oh why, did they pair me with you.")

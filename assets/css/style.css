@@ -91,7 +91,7 @@
 
 #question-box{
     height: 20vh;
-    width: 90vw;
+    width: 98vw;
     color: black;
     margin: auto;
     margin-top: 20px;
@@ -101,9 +101,9 @@
 
 #what-is{
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     height: 5vh;
-    width: 90vw;
+    width: 98vw;
     margin: auto;
     padding-top: 50px;
     font-weight: 700;
