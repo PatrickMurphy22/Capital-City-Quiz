@@ -448,7 +448,7 @@ const insultsCorrect = [
         insult: ("2 + 2 = 4, but im sure you knew that.")
     },
     {
-        insult: ("Bears Beats, Battle Star Galactica")
+        insult: ("Bears Beets, Battle Star Galactica")
     },
     {
         insult: ("You're So Charming When You Make An Effort.")
@@ -493,7 +493,7 @@ const insultsWrong = [
         insult: ("You have a walnut sized brain.")
     },
     {
-        insult: ("Do you even know the number for 911??")
+        insult: ("Do you e  ven know the number for 911??")
     },
     {
         insult: ("Why are you wasting my time.")
@@ -514,7 +514,7 @@ const insultsWrong = [
         insult: ("You're about as sharp as a sack full of soup.")
     },
     {
-        insult: ("You're so far behind, you thinks first..")
+        insult: ("Well, you smell like hot dog water.")
     },
     {
         insult: ("You're the reason we have warning labels.")
