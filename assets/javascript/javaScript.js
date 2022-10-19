@@ -1,17 +1,3 @@
-// Add ROUND variable and set to 1.
-let round = 1;
-document.getElementById("round").innerHTML = (`Round: ${round}/10`);
-
-// Add SCORE variable and set to 1.
-let score = 0;
-document.getElementById("score").innerHTML = (`Score: ${score}/10`);
-
-// Set variables to undefined to use throught code.
-let currentEasyQuestion;
-let currentMedQuestion;
-let currentHardQuestion;
-let funFacts;
-
 // added DOM to variables to use throughout code
 let finalScore = document.getElementById("final-score");
 let result = document.getElementById("title");
@@ -29,7 +15,23 @@ let easyMode = document.getElementById("easy-container");
 let medMode = document.getElementById("medium-container");
 let hardMode = document.getElementById("hard-container");
 let header = document.getElementById("header-box");
+let fun = document.getElementById("fun-fact");
 
+// Add ROUND variable and set to 1.
+let round = 1;
+document.getElementById("round").innerHTML = (`Round: ${round}/10`);
+
+// Add SCORE variable and set to 1.
+let score = 0;
+document.getElementById("score").innerHTML = (`Score: ${score}/10`);
+
+// Set variables to undefined to use throught code.
+let currentEasyQuestion;
+let currentMedQuestion;
+let currentHardQuestion;
+let funFacts;
+
+// functions to alter DOM if Correct or Wrong choice slected then restore after use.
 function resetRound(){
     header.style.color = "white";
     header.style.fontSize = "30px"
@@ -64,7 +66,17 @@ function selectionMenu(){
     })
 };
 
-//Adds event listener to start Easy Mode
+function endGameDom(){
+    document.querySelector(".next").style.visibility = "hidden";
+    qBox.style.visibility = "hidden";
+    qBox.style.height = "0vh";
+    scoreContainer.removeAttribute("hidden");
+    scoreBox.style.height = "0vh";
+    scoreBox.style.visibility = "hidden";
+    answerContainer.style.height = "35vh";
+}
+
+//Adds event listeners to start Easy/Medium/Hard Mode
 easyMode.addEventListener("click", () =>{
     for(let i = 0; i < buttons.length; i++){
         buttons[i].style.height = "7vh";
@@ -82,7 +94,7 @@ easyMode.addEventListener("click", () =>{
     easyGame();
 });
 
-//Adds event listener to start Medium Mode
+
 medMode.addEventListener("click", () =>{
     for(let i = 0; i < buttons.length; i++){
         buttons[i].style.height = "7vh";
@@ -100,7 +112,7 @@ medMode.addEventListener("click", () =>{
     mediumGame();
 });
 
-//Adds event listener to start Hard Mode
+
 hardMode.addEventListener("click", () =>{
     for(let i = 0; i < buttons.length; i++){
         buttons[i].style.height = "7vh";
@@ -118,7 +130,7 @@ hardMode.addEventListener("click", () =>{
     hardGame();
 });
 
-// List of EASY countrys in array format.
+// List of Easy/Medium/Hard countries in array format.
 const easyCountrys= [
 
     {
@@ -192,30 +204,7 @@ const easyCountrys= [
         capital:("Rome")
     },
 ]
-//Fun Facts in Array format to dispaly at end of EASYGAME.
-const easyFacts = [
-    {
-        fact: ("Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
-    },
-    {
-        fact: ("Tokyo is the most populated city in the world, with more than 38 million people.")
-    },
-    {
-        fact: ("Some say tea is life, British people reportedly drink 165 million cups of tea a day")
-    },
-    {
-        fact: ("All of china is on beijing time despite geographically spanning over 5 time zones.")
-    },
-    {
-        fact: ("Naples of course, is the birthplace of pizza ")
-    },
-    {
-        fact: ("Believe it or not, there are no leprechauns in Ireland")
-    },
 
-]
-
-// List of MEDIUM countrys in array format.
 const mediumCountrys = [
     {
         country:("Afganistan"),
@@ -294,30 +283,6 @@ const mediumCountrys = [
     },
 ]
 
-//Fun Facts in Array format to dispaly at end of MEDIUMGAME.
-const mediumFacts = [
-    {
-        fact: ("Australia is the continent in the world to have no active volcanoes.")
-    },
-    {
-        fact: ("New Zealand was the first self-governing nation to give women the right to vote in 1893.")
-    },
-    {
-        fact: ("Alexandria in Egypt shares its name with Alexander the Great.")
-    },
-    {
-        fact: ("It snows in the Sahara Desert.")
-    },
-    {
-        fact: ("Iraq is responsible for the development of the oldest known writing system.")
-    },
-    {
-        fact: ("Around 70 tribes with 30 various dialects reside in Kenya.")
-    },
-
-]
-
-// List of HARD countrys in array format.
 const hardCountrys = [
     {
         country:("Chad"),
@@ -396,7 +361,64 @@ const hardCountrys = [
     },
 
 ]
-///Fun Facts in Array format to dispaly at end of HARDGAME.
+
+//Fun Facts in Array format to dispaly at end of Easy/Medium/Hard difficulties
+const easyFacts = [
+    {
+        fact: ("Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
+    },
+    {
+        fact: ("Tokyo is the most populated city in the world, with more than 38 million people.")
+    },
+    {
+        fact: ("Some say tea is life, British people reportedly drink 165 million cups of tea a day")
+    },
+    {
+        fact: ("All of china is on beijing time despite geographically spanning over 5 time zones.")
+    },
+    {
+        fact: ("Naples of course, is the birthplace of pizza ")
+    },
+    {
+        fact: ("Believe it or not, there are no leprechauns in Ireland")
+    },
+
+]
+function randomEasyFacts(){
+    
+    let random = Math.floor(Math.random() * easyFacts.length);
+    funFacts = hardFacts[random];
+    fun.innerHTML = funFacts.fact;
+
+}
+const mediumFacts = [
+    {
+        fact: ("Australia is the continent in the world to have no active volcanoes.")
+    },
+    {
+        fact: ("New Zealand was the first self-governing nation to give women the right to vote in 1893.")
+    },
+    {
+        fact: ("Alexandria in Egypt shares its name with Alexander the Great.")
+    },
+    {
+        fact: ("It snows in the Sahara Desert.")
+    },
+    {
+        fact: ("Iraq is responsible for the development of the oldest known writing system.")
+    },
+    {
+        fact: ("Around 70 tribes with 30 various dialects reside in Kenya.")
+    },
+
+]
+function randomMedFacts(){
+    
+    let random = Math.floor(Math.random() * mediumFacts.length);
+    funFacts = hardFacts[random];
+    fun.innerHTML = funFacts.fact;
+
+}
 const hardFacts = [
     {
         fact: ("Chad is branded as the Dead Heart of Africa.")
@@ -418,22 +440,28 @@ const hardFacts = [
     },
 
 ]
+function randomHardFacts(){  
+    let random = Math.floor(Math.random() * hardFacts.length);
+    funFacts = hardFacts[random];
+    fun.innerHTML = funFacts.fact;
 
-//Easy game mode function, calls all functions in one function.
+}
+
+//Function that calls other funtions to play either Easy/Medium/Hard difficulties
 function easyGame(){
     displayEasyQuestion();
     easyChoice();
     easyRound();
     endEasyGame();
 }
-//Medium game mode function, calls all functions in one function.
+
 function mediumGame(){
     displayMedQuestion();
     medChoice();
     medRound();
     endMedGame();
 }
-//Hard game mode function, calls all functions in one function.
+
 function hardGame(){
     displayHardQuestion();
     hardChoice();
@@ -441,7 +469,7 @@ function hardGame(){
     endHardGame();
 }
 
-//function to display country and relative citys all in random order, then removes called array.
+//function to randomly displays Country and City for Easy/Medium/Hard difficulties
 function displayEasyQuestion(){
     
     let randomise = Math.floor(Math.random() * easyCountrys.length );
@@ -463,90 +491,6 @@ function displayEasyQuestion(){
     }
 };
 
-
-//Add eventlistener to all buttons and if the right button is selected change background color and increase score.
-function easyChoice(){
-    
-    for(let i = 0; i < 4; i++){
-        buttons[i].addEventListener("click", () => {
-            if(currentEasyQuestion.capital == currentEasyQuestion.citys[i]){
-                buttons[i].id = "correct";
-                if(buttons[i].id === "correct"){
-                    score++;
-                    document.getElementById("score").innerHTML = (`Score: ${score}/10`);
-                    buttons[i].disabled = true
-                    correctChoice()
-                }
-                }else{
-                    buttons[i].id = "wrong";
-                    buttons[i].disabled = true;
-                    wrongChoice();
-                }
-            })  
-        }   
-}
-// Adds event listener that increases round number and changes question.
-function easyRound(){
-
-    next.addEventListener("click", () => {
-        displayEasyQuestion();
-        resetRound();
-        header.style.backgroundColor = "rgb(21, 87, 111)";
-        gameBox.style.backgroundColor = "rgb(0, 222, 230)";
-        for(let i = 0; i < 4; i++){
-            buttons[i].removeAttribute("id");
-            buttons[i].disabled = false;
-        }
-        round++;
-        document.getElementById("round").innerHTML = (`Round: ${round}/10`);
-        endEasyGame();
-    })
-}
-
-
-// Manipulates the DOM after 10 rounds is reached to display score card
-function endEasyGame(){
-
-    if(round === 10){
-        next.innerHTML = "Finish";
-        next.addEventListener("click", () =>{
-            for(let i = 0; i < hideButtons.length; i++){
-                hideButtons[i].style.visibility = "hidden";
-                hideButtons[i].style.height = "0vh";
-            }
-
-            for(let i = 0; i < scoreCard.length; i++){
-                scoreCard[i].style.background = "linear-gradient(to right, rgb(21, 87, 111), rgb(8, 216, 216) )";
-                scoreCard[i].style.color = "white";
-            }
-            document.querySelector(".next").style.visibility = "hidden";
-            qBox.style.visibility = "hidden";
-            qBox.style.height = "0vh";
-            scoreContainer.removeAttribute("hidden");
-            scoreBox.style.height = "0vh";
-            scoreBox.style.visibility = "hidden";
-            answerContainer.style.height = "35vh";
-            
-
-            finalScore.innerHTML = score;
-            if(score < 5 ){
-                result.innerHTML = "Do you even know where your house is??";
-            }else if(score <= 7 ){
-                result.innerHTML = "You're far from a globe trotter, but you're getting there";
-            }else{
-                result.innerHTML = "Not bad, maybe you are ready to take the next step...";
-            };
-
-            let fun = document.getElementById("fun-fact");
-            let random = Math.floor(Math.random() * easyFacts.length);
-            funFacts = easyFacts[random];
-            fun.innerHTML = funFacts.fact;
-        })
-    }
-}
-
-
-//function to display country and relative citys all in random order, then removes called array.
 function displayMedQuestion(){
     
     let randomise = Math.floor(Math.random() * mediumCountrys.length );
@@ -568,91 +512,6 @@ function displayMedQuestion(){
     }
 }
 
-
-//Add eventlistener to all buttons and if the right button is selected change background color and increase score.
-function medChoice(){
-    
-    for(let i = 0; i < 4; i++){
-        buttons[i].addEventListener("click", () => {
-            if(currentMedQuestion.capital == currentMedQuestion.citys[i]){
-                buttons[i].id = "correct";
-                if(buttons[i].id === "correct"){
-                    score++;
-                    document.getElementById("score").innerHTML = (`Score: ${score}/10`);
-                    buttons[i].disabled = true;
-                    correctChoice()
-                }
-                }else{
-                    buttons[i].id = "wrong";
-                    buttons[i].disabled = true;
-                    wrongChoice();
-                }
-            })  
-        }   
-    }    
-
-
-// Adds event listener that increases round number and changes question.
-function medRound(){
-
-    next.addEventListener("click", () => {
-        displayMedQuestion();
-        resetRound();
-        header.style.backgroundColor = "rgb(97, 30, 94)";
-        gameBox.style.backgroundColor = "rgb(174, 46, 212)";
-        for(let i = 0; i < 4; i++){
-            buttons[i].removeAttribute("id");
-            buttons[i].disabled = false;
-        }
-        round++;
-        document.getElementById("round").innerHTML = (`Round: ${round}/10`);
-        endMedGame();
-    })
-}
-
-
-// Manipulates the DOM after 10 rounds is reached to display score card
-function endMedGame(){
-
-    if(round === 10){
-        next.innerHTML = "Finish"
-        next.addEventListener("click", () =>{
-            for(let i = 0; i < hideButtons.length; i++){
-                hideButtons[i].style.visibility = "hidden";
-                hideButtons[i].style.height = "0vh";
-            }
-            
-            for(let i = 0; i < scoreCard.length; i++){
-                scoreCard[i].style.background = "linear-gradient(to right, rgb(58, 3, 70), rgb(173, 16, 194))";
-                scoreCard[i].style.color = "white";
-            }
-            document.querySelector(".next").style.visibility = "hidden";
-            qBox.style.visibility = "hidden";
-            qBox.style.height = "0vh";
-            scoreContainer.removeAttribute("hidden");
-            scoreBox.style.height = "0vh";
-            scoreBox.style.visibility = "hidden";
-            answerContainer.style.height = "35vh";
-            
-
-            finalScore.innerHTML = score;
-            if(score < 5 ){
-                result.innerHTML = "LOL, I suppose you think Africa is a country??";
-            }else if(score <= 7 ){
-                result.innerHTML = "They didn't lie when they said you're average at best..";
-            }else{
-                result.innerHTML = "Okay then, maybe you are not an idiot after all";
-            }
-
-            let fun = document.getElementById("fun-fact");
-            let random = Math.floor(Math.random() * mediumFacts.length);
-            funFacts = mediumFacts[random];
-            fun.innerHTML = funFacts.fact;
-        })
-    }
-}
-
-//function to display country and relative citys all in random order, then removes called array.
 function displayHardQuestion(){
     
     let randomise = Math.floor(Math.random() * hardCountrys.length );
@@ -675,7 +534,49 @@ function displayHardQuestion(){
 }
 
 
-//Add eventlistener to all buttons and if the right button is selected change background color and increase score.
+//Add eventlistener to all buttons on Easy/Medium/Hard difficulties, if capital selected score increases by one.
+function easyChoice(){
+    
+    for(let i = 0; i < 4; i++){
+        buttons[i].addEventListener("click", () => {
+            if(currentEasyQuestion.capital == currentEasyQuestion.citys[i]){
+                buttons[i].id = "correct";
+                if(buttons[i].id === "correct"){
+                    score++;
+                    document.getElementById("score").innerHTML = (`Score: ${score}/10`);
+                    buttons[i].disabled = true
+                    correctChoice()
+                }
+                }else{
+                    buttons[i].id = "wrong";
+                    buttons[i].disabled = true;
+                    wrongChoice();
+                }
+            })  
+        }   
+}
+
+function medChoice(){
+    
+    for(let i = 0; i < 4; i++){
+        buttons[i].addEventListener("click", () => {
+            if(currentMedQuestion.capital == currentMedQuestion.citys[i]){
+                buttons[i].id = "correct";
+                if(buttons[i].id === "correct"){
+                    score++;
+                    document.getElementById("score").innerHTML = (`Score: ${score}/10`);
+                    buttons[i].disabled = true;
+                    correctChoice()
+                }
+                }else{
+                    buttons[i].id = "wrong";
+                    buttons[i].disabled = true;
+                    wrongChoice();
+                }
+            })  
+        }   
+}    
+
 function hardChoice(){
     
     for(let i = 0; i < 4; i++){
@@ -695,11 +596,44 @@ function hardChoice(){
                 }
             })  
         }   
-    }    
+}  
 
 
+// Adds event listener that increases round number and changes question for Easy/Medium/Hard difficulties
+function easyRound(){
 
-// Adds event listener that increases round number and changes question.
+    next.addEventListener("click", () => {
+        displayEasyQuestion();
+        resetRound();
+        header.style.backgroundColor = "rgb(21, 87, 111)";
+        gameBox.style.backgroundColor = "rgb(0, 222, 230)";
+        for(let i = 0; i < 4; i++){
+            buttons[i].removeAttribute("id");
+            buttons[i].disabled = false;
+        }
+        round++;
+        document.getElementById("round").innerHTML = (`Round: ${round}/10`);
+        endEasyGame();
+    })
+}
+
+function medRound(){
+
+    next.addEventListener("click", () => {
+        displayMedQuestion();
+        resetRound();
+        header.style.backgroundColor = "rgb(97, 30, 94)";
+        gameBox.style.backgroundColor = "rgb(174, 46, 212)";
+        for(let i = 0; i < 4; i++){
+            buttons[i].removeAttribute("id");
+            buttons[i].disabled = false;
+        }
+        round++;
+        document.getElementById("round").innerHTML = (`Round: ${round}/10`);
+        endMedGame();
+    })
+}
+
 function hardRound(){
 
     next.addEventListener("click", () => {
@@ -718,7 +652,69 @@ function hardRound(){
 }
 
 
-// Manipulates the DOM after 10 rounds is reached to display score card
+// Manipulates the DOM after 10 rounds is reached to display score card for Easy/Medium/Hard difficulties
+function endEasyGame(){
+
+    if(round === 10){
+        next.innerHTML = "Finish";
+        next.addEventListener("click", () =>{
+            for(let i = 0; i < hideButtons.length; i++){
+                hideButtons[i].style.visibility = "hidden";
+                hideButtons[i].style.height = "0vh";
+            }
+
+            for(let i = 0; i < scoreCard.length; i++){
+                scoreCard[i].style.background = "linear-gradient(to right, rgb(21, 87, 111), rgb(8, 216, 216) )";
+                scoreCard[i].style.color = "white";
+            }
+
+            endGameDom();
+        
+            finalScore.innerHTML = score;
+            if(score < 5 ){
+                result.innerHTML = "Do you even know where your house is??";
+            }else if(score <= 7 ){
+                result.innerHTML = "You're far from a globe trotter, but you're getting there";
+            }else{
+                result.innerHTML = "Not bad, maybe you are ready to take the next step...";
+            };
+
+            randomEasyFacts();
+        })
+    }
+}
+
+function endMedGame(){
+
+    if(round === 10){
+        next.innerHTML = "Finish"
+        next.addEventListener("click", () =>{
+            for(let i = 0; i < hideButtons.length; i++){
+                hideButtons[i].style.visibility = "hidden";
+                hideButtons[i].style.height = "0vh";
+            }
+            
+            for(let i = 0; i < scoreCard.length; i++){
+                scoreCard[i].style.background = "linear-gradient(to right, rgb(58, 3, 70), rgb(173, 16, 194))";
+                scoreCard[i].style.color = "white";
+            }
+
+            endGameDom();
+            
+            finalScore.innerHTML = score;
+            if(score < 5 ){
+                result.innerHTML = "LOL, I suppose you think Africa is a country??";
+            }else if(score <= 7 ){
+                result.innerHTML = "They didn't lie when they said you're average at best..";
+            }else{
+                result.innerHTML = "Okay then, maybe you are not an idiot after all";
+            }
+
+            randomMedFacts();
+        })
+    }
+}
+
 function endHardGame(){
 
     if(round === 10){
@@ -733,14 +729,8 @@ function endHardGame(){
                 scoreCard[i].style.background = "linear-gradient(to right, rgb(73, 13, 13), rgba(153, 6, 6))";
                 scoreCard[i].style.color = "white";
             }
-            document.querySelector(".next").style.visibility = "hidden";
-            qBox.style.visibility = "hidden";
-            qBox.style.height = "0vh";
-            scoreContainer.removeAttribute("hidden");
-            scoreBox.style.height = "0vh";
-            scoreBox.style.visibility = "hidden";
-            answerContainer.style.height = "35vh";
             
+            endGameDom();
 
             finalScore.innerHTML = score;
             if(score < 5 ){
@@ -751,10 +741,7 @@ function endHardGame(){
                 result.innerHTML = "Congrats, you have endless amounts of useless knowledge";
             };
 
-            let fun = document.getElementById("fun-fact");
-            let random = Math.floor(Math.random() * hardFacts.length);
-            funFacts = hardFacts[random];
-            fun.innerHTML = funFacts.fact;
+            randomHardFacts();
         })
     }
 }
