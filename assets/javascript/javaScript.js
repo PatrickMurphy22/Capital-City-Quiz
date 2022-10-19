@@ -461,7 +461,7 @@ function correctInsults(){
 
 const insultsWrong = [
     {
-        insult: ("You remind of Kevin from the Office")
+        insult: ("You remind me of Kevin from the Office")
     },
     {
         insult: ("One, Two, you havent a clue")
@@ -476,7 +476,7 @@ const insultsWrong = [
         insult: ("Why are you wasting my time")
     },
     {
-        insult: ("You make Forrest Gumps IQ impressive")
+        insult: ("You make Forrest Gumps IQ")
     },
     {
         insult: ("Why oh why, did they pair me with you.")
