@@ -216,6 +216,7 @@
 
 
     /* FOOTER */
+
 footer{  
     width: 100vw;
     height: 150px;
@@ -232,6 +233,11 @@ footer{
     margin-top: 2%;
     color: rgb(255, 255, 255);
     text-align: center;
+}
+#social-media-icons h3{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    
 }
     
 #social-media-icons{
@@ -423,7 +429,18 @@ footer{
     }
 
     footer{  
-        height: 200px;
+        height: 220px;
+    }
+    .social-networks i{
+        font-size: 5vh;
+        padding-top: 2%;
+        color:rgb(255, 255, 255);
+        font-size: 25px;
+    }
+        
+    .social-networks li{
+        margin:0 5% 0 5%;
+
     }
     .ans{
         padding-right: 80px;

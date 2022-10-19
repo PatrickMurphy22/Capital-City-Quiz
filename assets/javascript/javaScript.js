@@ -203,6 +203,31 @@ const easyCountrys= [
         citys:["Rome","Venice","Milan","Naples"],
         capital:("Rome")
     },
+    {
+        country:("Netherlands"),
+        citys:["Amsterdam","Rotterdam","Utrecht","Eindhoven"],
+        capital:("Amsterdam")
+    },
+    {
+        country:("Portugal"),
+        citys:["Lisbon","Porto","Braga","Madeira"],
+        capital:("Lisbon")
+    },
+    {
+        country:("Russia"),
+        citys:["Moscow","St. Petersburg","Belgorod","Kazan"],
+        capital:("Moscow")
+    },
+    {
+        country:("Denmark"),
+        citys:["Copenhagen","Aarhus","Odense","Aalborg"],
+        capital:("Copenhagen")
+    },
+    {
+        country:("Belgium"),
+        citys:["Brussels","Bruges","Antwerp","Ghent"],
+        capital:("Brussels")
+    },
 ]
 
 const mediumCountrys = [
@@ -281,6 +306,31 @@ const mediumCountrys = [
         citys:["Hanoi","Ho Chi Minh","Hoi An","Da Nang"],
         capital:("Hanoi")
     },
+    {
+        country:("Arab Emirates"),
+        citys:["Abu Dhabi","Dubai","Sharjah","Qatar"],
+        capital:("Abu Dhabi")
+    },
+    {
+        country:("Argentina"),
+        citys:["Buenos Aires","Mendoza","Salta","Rosario"],
+        capital:("Buenos Aires")
+    },
+    {
+        country:("Canada"),
+        citys:["Ottawa","Montreal","Vancouver","Toronto"],
+        capital:("Ottawa")
+    },
+    {
+        country:("Turkey"),
+        citys:["Ankara","Istanbul","Izmir","Bursa"],
+        capital:("Akara")
+    },
+    {
+        country:("Switzerland"),
+        citys:["Bern","Zurich","Geneva","Basel"],
+        capital:("Bern")
+    },
 ]
 
 const hardCountrys = [
@@ -358,6 +408,31 @@ const hardCountrys = [
         country:("Saudi Arabia"),
         citys:["Riyadh","Jeddah","Medina","Mecca"],
         capital:("Riyadh")
+    },
+    {
+        country:("Nigeria"),
+        citys:["Abjua","Lagos","Kano","Uyo"],
+        capital:("Abjua")
+    },
+    {
+        country:("Tanzania"),
+        citys:["Dodoma","Zanzibar","Kilimanjaro","Der es Salaam"],
+        capital:("Dodoma")
+    },
+    {
+        country:("Greenland"),
+        citys:["Nuuk","Paamiut","Attu","Arsuk"],
+        capital:("Nuuk")
+    },
+    {
+        country:("Papua New Guinea"),
+        citys:["Port Moresby","Batua","Tari","Lae"],
+        capital:("Port Moresby")
+    },
+    {
+        country:("Fiji"),
+        citys:["Suva","Nadi","Volivoli","Lautoka"],
+        capital:("Suva")
     },
 
 ]
@@ -734,11 +809,11 @@ function endHardGame(){
 
             finalScore.innerHTML = score;
             if(score < 5 ){
-                result.innerHTML = "Ha Ha Ha I knew it.. Pathetic effort to be say the least";
+                result.innerHTML = "Ha Ha Ha I knew it.. Pathetic effort to be say the least...";
             }else if(score <= 7 ){
                 result.innerHTML = "So so so close, maybe 20 more attempts and you'll get there.";
             }else{
-                result.innerHTML = "Congrats, you have endless amounts of useless knowledge";
+                result.innerHTML = "Congrats, you have endless amounts of useless knowledge.";
             };
 
             randomHardFacts();
