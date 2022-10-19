@@ -11,142 +11,143 @@
     <body>
         <header id="header-box">
             <h1>Capital Quiz</h1>
-</header>
-<div id="difficulty-modes">
-    <div id="lets-play">
-        <h3>Let's Play</h3>
-    </div>
+        </header>
+        <div id="difficulty-modes">
+            <div id="lets-play">
+                <h3>Let's test your Capital city knowledge</h3>
+            </div>
 
-    <div id="difficulty-settings">
-        <div id="easy-container">
-                <div id="easy-box">
-                    <div class="easy-mode easy1">
-                        <p>Level 1</p>
-                        <h3>BEGINNER</h3>
-                    </div>
-                    <div class="easy-mode easy2">
-                        <img src="https://img.icons8.com/clouds/100/000000/play.png" alt="Arrow button floating in clouds"/>
-                    </div>
+            <div id="difficulty-settings">
+                
+                <div id="easy-container">
+                        <div id="easy-box">
+                            <div class="easy-mode">
+                                <p>Level 1</p>
+                                <h3>BEGINNER</h3>
+                            </div>
+                            <div class="easy-mode">
+                                <img src="https://img.icons8.com/clouds/100/000000/play.png" alt="Arrow button floating in clouds"/>
+                            </div>
+                        </div>
                 </div>
+
+                <div id="medium-container">
+                        <div id="medium-box">
+                            <div class="medium-mode">
+                                <p>Level 2</p>
+                                <h3>JOURNEYMAN</h3>
+                            </div>
+                            <div class="medium-mode">
+                                <img src="https://img.icons8.com/bubbles/100/000000/earth-planet.png" alt="Cartoon image of earth"/>
+                            </div>
+                        </div>
+                </div>
+                
+                <div id="hard-container">
+                        <div id="hard-box">
+                            <div class="hard-mode">
+                                <p>Level 3</p>
+                                <h3>SEASONED</h3>
+                            </div>
+                        <div class="hard-mode">
+                            <img src="https://img.icons8.com/bubbles/100/000000/city-buildings.png" alt="Cartoon image of 5 city skyscrapers"/>
+                        </div>
+                        </div>
+                    </div>
+            </div>
         </div>
 
-        <div id="medium-container">
-                <div id="medium-box">
-                    <div class="medium-mode medium1">
-                        <p>Level 2</p>
-                        <h3>JOURNEYMAN</h3>
+        <div id="game-mode" class="hidden"> 
+            <div id="question-box">
+                <p id="what-is"> -What is the capital of-</p>
+                <p id="country"></p>
+            </div>
+
+            <div id="score-box">
+                <div id="round"></div>
+                <div id="score"></div>
+            </div>
+
+            <div id="score-container" hidden>
+                <div class= score-box>
+
+                    <div class="score-card score1">
+                        <h2>You Scored</h2>
+                        <div>
+                            <h2 id="final-score">-</h2>
+                        </div>
+                        <h2>Out of 10</h2>
                     </div>
-                    <div class="medium-mode medium2">
-                        <img src="https://img.icons8.com/bubbles/100/000000/earth-planet.png" alt="Cartoon image of earth"/>
+
+                    <div class="score-card score2">
+                        <h2 id="title" aria-hidden="true">-</h2>
                     </div>
-                </div>
-        </div>
-        
-        <div id="hard-container">
-                <div id="hard-box">
-                    <div class="hard-mode hard1">
-                        <p>Level 3</p>
-                        <h3>SEASONED</h3>
+                    
+                    <div class="score-card score3">
+                        <h2>-Fun Fact-</h2>
+                        <h4 id="fun-fact" aria-hidden="true">-</h4>
                     </div>
-                <div class="hard-mode hard2">
-                    <img src="https://img.icons8.com/bubbles/100/000000/city-buildings.png" alt="Cartoon image of 5 city skyscrapers"/>
-                </div>
+                    <div id="return"><a href="index.html">Return</a></div>
                 </div>
             </div>
-    </div>
-</div>
-    <div id="game-mode" class="hidden"> 
-    <div id="question-box">
-        <p id="what-is"> What is the capital of:</p>
-        <p id="country"></p>
-    </div>
 
-    <div id="score-box">
-    <div id="round"></div>
-    <div id="score"></div>
-    </div>
-    <div id="score-container" hidden>
-    <div class= score-box>
+            <div id="answer-container">
+                <div id="answerbox">
 
-        <div class="score-card score1">
-            <h2>You Scored</h2>
-            <div>
-                <h2 id="final-score">-</h2>
+                    <button class="answer">
+                        <span id="a">
+                            <span>A</span>
+                        </span>
+                        <span class="ans">
+                            <span aria-hidden="true">-</span>
+                        </span>
+                    </button>
+
+                    <button class="answer">
+                        <span id="b">
+                            <span>B</span>
+                        </span>
+                        <span class="ans">
+                            <span aria-hidden="true">-</span>
+                        </span>
+                    </button>
+
+                    <button class="answer">
+                        <span id="c">
+                            <span>C</span>
+                        </span>
+                        <span class="ans">
+                            <span aria-hidden="true">-</span>
+                        </span>
+                    </button>
+
+                    <button class="answer">
+                        <span id="d">
+                            <span>D</span>
+                        </span>
+                        <span class="ans">
+                            <span aria-hidden="true">-</span>
+                        </span>
+                    </button>
+                    
+                    <div class="next">
+                        <h3 id="next">Next</h3>
+                    </div>
+                </div>
             </div>
-            <h2>Out of 10</h2>
         </div>
-
-        <div class="score-card score2">
-            <h2 id="title" aria-hidden="true">-</h2>
-        </div>
-        
-        <div class="score-card score3">
-            <h2>-Fun Fact-</h2>
-            <h4 id="fun-fact" aria-hidden="true">-</h4>
-        </div>
-        <div id="return"><a href="index.html">Return</a></div>
-    </div>
-    </div>
-
-<div id="answer-container">
-    <div id="answerbox">
-
-        <button class="answer ez-ans1">
-            <span id="a">
-                <span>A</span>
-            </span>
-            <span class="ans">
-                <span aria-hidden="true">-</span>
-            </span>
-        </button>
-
-        <button class="answer ez-ans2">
-            <span id="b">
-                <span>B</span>
-            </span>
-            <span class="ans">
-                <span aria-hidden="true">-</span>
-            </span>
-        </button>
-
-        <button class="answer ez-ans3">
-            <span id="c">
-                <span>C</span>
-            </span>
-            <span class="ans">
-                <span aria-hidden="true">-</span>
-            </span>
-        </button>
-
-        <button class="answer ez-ans4">
-            <span id="d">
-                <span>D</span>
-            </span>
-            <span class="ans">
-                <span aria-hidden="true">-</span>
-            </span>
-        </button>
-        
-        <div class="next">
-            <h3 id="next">Next</h3>
-        </div>
-    </div>
-</div>
-</div>
-<footer>
-    <div id="footer-container">
-    <div id="social-media-icons" >
-        <h2>Follow Me</h2>
-        <ul class="social-networks">
-            <li><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (open in a new tab)" > <i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (open in a new tab)"> <i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (open in a new tab)" > <i class="fab fa-youtube"></i></a></li>
-            <li><a href="https://Twitter.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (open in a new tab)" > <i class="fab fa-twitter"></i></a></li>
-        </ul>
-    </div>
-</div>
-</footer>
-<script src="assets/javascript/javaScript.js"></script>
-<script src="https://kit.fontawesome.com/d2b7aff9cc.js" crossorigin="anonymous"></script>
+        <footer>
+            <div id="footer-container">
+                <div id="social-media-icons" >
+                    <h2>Follow Me</h2>
+                    <ul class="social-networks">
+                        <li><a href="https://github.com/PatrickMurphy22" target="_blank" rel="noopener" aria-label="Visit my GitHub page (open in a new tab)" > <i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/patrick-murphy-1660b5244/" target="_blank" rel="noopener" aria-label="Visit my linkedin page (open in a new tab)" ><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/javascript/javaScript.js"></script>
+        <script src="https://kit.fontawesome.com/d2b7aff9cc.js" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -35,6 +35,7 @@ function resetRound(){
     header.style.fontSize = "30px"
     header.innerHTML = "Capital Quiz"
 }
+
 function correctChoice(){
     header.style.backgroundColor = "rgb(19, 66, 27)"
     header.innerHTML = "-CORRECT-"
@@ -48,6 +49,7 @@ function wrongChoice(){
     header.style.fontSize = "30px"
     gameBox.style.backgroundColor = "red";
 }
+
 function selectionMenu(){
 
     for(let i = 0; i < buttons.length; i++){
@@ -70,7 +72,7 @@ easyMode.addEventListener("click", () =>{
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
-    gameBox.style.height = "80vh";
+    gameBox.style.height = "90vh";
     gameBox.style.backgroundColor = "rgb(0, 222, 230)";
     header.style.backgroundColor = "rgb(21, 87, 111)";
     header.style.color = "white";
@@ -88,7 +90,7 @@ medMode.addEventListener("click", () =>{
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
-    gameBox.style.height = "80vh";
+    gameBox.style.height = "90vh";
     gameBox.style.backgroundColor = "rgb(174, 46, 212)";
     header.style.backgroundColor = "rgb(97, 30, 94)";
     header.style.color = "white";
@@ -106,7 +108,7 @@ hardMode.addEventListener("click", () =>{
     difficultyMode.style.visibility = "hidden";
     difficultyMode.style.height = "0vh";
     gameBox.style.visibility = "visible";
-    gameBox.style.height = "80vh";
+    gameBox.style.height = "90vh";
     gameBox.style.backgroundColor = "rgba(180, 6, 6)";
     header.style.backgroundColor = "rgb(100, 10, 10)";
     header.style.color = "white";

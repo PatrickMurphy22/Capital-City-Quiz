@@ -33,17 +33,11 @@
     font-size: 20px;
     text-align: center;
 }
-
-#easy-body #header-box a, #medium-body #header-box a, #hard-body #header-box a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
     /* DIFFICULTY*/
 
 #difficulty-settings{
     height: 75vh;
 }
-
 #easy-container, #medium-container, #hard-container{
     height: 15vh;
     width: 85vw;
@@ -189,6 +183,7 @@
 #d{
     background-color: rgb(194, 0, 126);
 }
+
 .next{
     border: solid 1px rgb(255, 255, 255);
     height: 4vh;
@@ -200,6 +195,7 @@
     margin: auto;
     margin-top: 15.5px;
 }
+
 #next, #finish{
     margin: auto;
 }
@@ -220,48 +216,47 @@
 
 
     /* FOOTER */
+footer{  
+    width: 100vw;
+    height: 150px;
+    background-image:linear-gradient(to right, rgb(42, 41, 41), rgb(78, 78, 78));
+    letter-spacing: 4px;
+    border-top: 2px white solid;
+}
+    
+#footer-container{
+    height: 120px;
+}
+    
+#social-media-icons h2{
+    margin-top: 2%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+    
+#social-media-icons{
+    width: 100vw;
+    font-size: 10px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+    
+.social-networks i{
+    font-size: 5vh;
+    padding-top: 4%;
+    color:rgb(255, 255, 255);
+    font-size: 25px;
+}
+    
+.social-networks li{
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+    margin:0 5% 0 5%;
+    display: inline;
+}
 
-    footer{
-       
-        width: 100vw;
-        height: 150px;
-        background-image:linear-gradient(to right, rgb(42, 41, 41), rgb(78, 78, 78));
-        letter-spacing: 4px;
-        border-top: 2px white solid;
-    }
-    
-    #footer-container{
-        height: 120px;
-    }
-    
-    #social-media-icons h2{
-        margin-top: 2%;
-        color: rgb(255, 255, 255);
-        text-align: center;
-    }
-    
-    #social-media-icons{
-        width: 100vw;
-        font-size: 10px;
-        margin: auto;
-        margin-top: 30px;
-        text-align: center;
-    }
-    
-    .social-networks i{
-        font-size: 5vh;
-        padding-top: 4%;
-        color:rgb(255, 255, 255);
-        font-size: 25px;
-    }
-    
-    .social-networks li{
-        list-style: none;
-        text-align: center;
-        font-size: 20px;
-        margin:0 5% 0 5%;
-        display: inline;
-    }
 
         /* SCORE BOX */
 
@@ -273,7 +268,7 @@
 
 .score-box{
     height: 40vh;
-    width: 80vw;
+    width: 85vw;
     margin: auto;
     margin-top: 20px;
     border-radius: 20px;
@@ -289,7 +284,10 @@
 .score1{
     border-top-left-radius:20px ;
     border-top-right-radius:20px ;
-    padding-top: 20px;
+}
+
+.score2{
+    padding: 20px, 5px, 0, 5px ;
 }
 
 .score3{
@@ -297,7 +295,7 @@
     border-bottom-right-radius:20px ;
 }
 
-#return, #hard-return{
+#return{
     border: solid 1px rgb(255, 255, 255);
     height: 6vh;
     width: 20vw;
@@ -306,6 +304,7 @@
     box-shadow: 10px 5px 5px rgb(113, 113, 113);
     background-color: rgb(0, 0, 0);
 } 
+
 #return a{
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -316,6 +315,7 @@
     margin: auto;
     margin-top: 20px;
 }
+
 #return:hover, #hard-return:hover{
     background-color: white;
 }
@@ -326,4 +326,106 @@
 
 #fun-fact{
     padding-top:15px;
+}
+
+@media only screen and (min-width: 1000px ) {
+    #difficulty-settings{
+        height: 85vh;
+    }
+    #what-is{
+        width: 45vw;
+        padding-top: 35px;
+    }
+    
+    #country{
+        font-size: 25px;
+        font-weight: 900;
+    }
+    
+    #easy-container, #medium-container, #hard-container{
+        height: 12.5vh;
+        width: 75vw;
+    }
+    .easy-mode p, .medium-mode p, .hard-mode p{
+        padding-left: 20px;
+        margin-top: 50px;
+    }
+    .easy-mode h3, .medium-mode h3, .hard-mode h3{
+        padding-left: 20px;
+    }
+    #score-box{
+        font-size: 20px;
+
+    }
+    #answer-container{
+        height: 60vh;
+    }
+    #question-box{
+        height: 20vh;
+        width: 50vw;
+        color: black;
+        margin: auto;
+        margin-top: 20px;
+    } 
+    .answer{
+        width: 50vw;
+        border-radius: 30px;
+        margin: auto;
+        margin-top: 20px;
+        color: blue;
+    }
+    .ans{
+        padding-right: 65px;
+    }
+    .next{
+        height: 5vh;
+        width: 80px;
+    }
+    #return{
+        height: 6vh;
+        width: 10vw;
+        border-radius: 30px;
+    } 
+    .score1{
+        padding: 5px 0 5px 0 ;
+    }
+    
+    .score2{
+        padding-top: 15px;
+    }
+    .score3{
+        font-size: 18px;
+    }
+    footer{  
+        height: 100px;
+    }
+    
+    #social-media-icons{
+        width: 100vw;
+        font-size: 17.5px;
+        margin: auto;
+        text-align: center;
+    }
+    footer{  
+        height: 175px;
+    }
+    
+    #footer-container{
+        height: 150px;
+    }
+}
+
+@media only screen and (min-width: 1500px ) {
+
+    #easy-container, #medium-container, #hard-container{
+        height: 15vh;
+        width: 75vw;
+    }
+
+    footer{  
+        height: 200px;
+    }
+    .ans{
+        padding-right: 80px;
+    }
 }
