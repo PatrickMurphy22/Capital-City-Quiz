@@ -676,6 +676,7 @@ function easyChoice(){
                     buttons[2].disabled = true;
                     buttons[3].disabled = true;
                     correctInsults();
+                    displayCountry.innerHTML = ``
                     correctChoice()
                 }else{
                     displayCountry.innerHTML = `Answer: ${currentEasyQuestion.capital}`
@@ -705,6 +706,7 @@ function medChoice(){
                     buttons[2].disabled = true;
                     buttons[3].disabled = true;
                     correctInsults();
+                    displayCountry.innerHTML = ``
                     correctChoice()
                 }else{
                     displayCountry.innerHTML = `Answer: ${currentMedQuestion.capital}`
@@ -734,6 +736,7 @@ function hardChoice(){
                     buttons[2].disabled = true;
                     buttons[3].disabled = true;
                     correctInsults();
+                    displayCountry.innerHTML = ``
                     correctChoice()
                 }else{
                     displayCountry.innerHTML = `Answer: ${currentHardQuestion.capital}`
