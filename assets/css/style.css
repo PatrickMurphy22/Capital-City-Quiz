@@ -206,7 +206,7 @@
 #correct{
     background: linear-gradient(to left, green 50%, white 50%) right;
     background-size: 200%;
-    transition: .5s ease-out;
+    transition: 1s ease-out;
     color: white;
 }
 
@@ -214,7 +214,7 @@
     color: white;
     background: linear-gradient(to left, red 50%, white 50%) right;
     background-size: 200%;
-    transition: .5s ease-out;
+    transition: 1s ease-out;
 }
 
 
