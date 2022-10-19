@@ -476,10 +476,10 @@ const insultsWrong = [
         insult: ("Why are you wasting my time")
     },
     {
-        insult: ("You make Forrest Gumps IQ")
+        insult: ("You make Forrest Gumps IQ look High")
     },
     {
-        insult: ("Why oh why, did they pair me with you.")
+        insult: ("You're the Toby to my Michael Scott")
     },
     {
         insult: ("Well that was silly.")
