@@ -18,7 +18,7 @@
 }
     /* HEADER */
 
-#header-box{
+#header{
     font-size: 15px;
     height: 6vh;
     padding-top: 10px;
@@ -90,7 +90,7 @@
 }
 
 #question-box{
-    height: 20vh;
+    height: 0vh;
     width: 98vw;
     color: black;
     margin: auto;
@@ -121,25 +121,27 @@
     text-align: center;
     font-size: 22.5px;
     font-weight: 700;
+    height: 0vh;
 }
 
   /* ANSWERS */
 
 #answer-container{
-    height: 50vh;
-    width: 70vw;
+    height: 0vh;
+    width: 80vw;
     margin: auto;
 }
 
 .answer{
     border: solid 1px rgb(167, 166, 166);
-    width: 71vw;
+    width: 80vw;
     margin-top: 12.5px;
     border-radius: 30px;
     display: flex;
     background-color: rgb(255, 255, 255);
     transition: background-color 0.7s ease-in-out;
     color: blue;
+    height: 0vh;
 }
 
 #a, #b, #c, #d{
@@ -159,11 +161,11 @@
 }
 
 .ans{
-    width: 45vw;
+    width: 60vw;
     font-size: 22.5px;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 5%;
+    margin-left: 3%;
     text-align: center;
 }
 
@@ -276,11 +278,12 @@ footer{
 
 
 .score-box{
-    height: 40vh;
+    height: 60vh;
     width: 85vw;
     margin: auto;
     margin-top: 20px;
     border-radius: 20px;
+
 }
 
 .score-card{
@@ -288,6 +291,7 @@ footer{
     box-shadow: 10px 5px 5px rgb(46, 38, 38);
     height: 17.5vh;
     text-align: center;
+    color:white;
 }
 
 .score1{
@@ -295,7 +299,7 @@ footer{
     border-top-right-radius:20px ;
 }
 
-.score2{
+#result{
     padding: 20px 5px 0px 5px ;
 }
 
@@ -327,10 +331,6 @@ footer{
 
 #return:hover, #hard-return:hover{
     background-color: white;
-}
-
-#title{
-    padding-top: 20px;
 }
 
 #fun-fact{
