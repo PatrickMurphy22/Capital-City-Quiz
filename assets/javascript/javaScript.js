@@ -513,6 +513,19 @@ function resetRound(){
     whatIs.innerHTML = "-What is the capital of-"
 }
 
+function disableAnswers(){
+    for (let i = 0; i < 4; i++){
+        answers[i].disabled = true;
+    }
+}
+
+function reableAnswers(){
+    for (let i = 0; i < 4; i++){
+        answers[i].disabled = false;
+        answers[i].removeAttribute("id")
+    }
+}
+
 function correctChoice(){
     header.style.backgroundColor = "rgb(19, 66, 27)"
     header.innerHTML = "-CORRECT-"
@@ -575,6 +588,7 @@ function randomEasyFacts(){
     fun.innerHTML = funFacts.fact;
 
 }
+
 function randomMedFacts(){
     
     let random = Math.floor(Math.random() * mediumFacts.length);
@@ -582,7 +596,6 @@ function randomMedFacts(){
     fun.innerHTML = funFacts.fact;
 
 }
-
 
 function randomHardFacts(){  
     let random = Math.floor(Math.random() * hardFacts.length);
@@ -665,8 +678,6 @@ function displayMedQuestion(){
     generateRandomQuestions()
 }
 
-
-
 function displayHardQuestion(){
     quiz = hardCountrys;
     hardMode.addEventListener("click", () =>{
@@ -682,14 +693,6 @@ function displayHardQuestion(){
     generateRandomQuestions();
 }
 
-function disableanswers(){
-    for (let i = 0; i < 4; i++){
-        answers[0].disabled = true;
-        answers[1].disabled = true;
-        answers[2].disabled = true;
-        answers[3].disabled = true;
-    }
-}
 
 //Add eventlistener to all answers on Easy/Medium/Hard difficulties, if capital selected score increases by one.
 function playerChoice(){
@@ -702,12 +705,12 @@ function playerChoice(){
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
                     displayCountry.innerHTML = ``
                     correctInsults();
-                    disableanswers();
+                    disableAnswers();
                     correctChoice()
                 }else{
                     displayCountry.innerHTML = `Answer: ${currentQuestion.capital}`
                     answers[i].id = "wrong"
-                    disableanswers();
+                    disableAnswers();
                     wrongChoice();
                     wrongInsults();
                 }
@@ -721,16 +724,12 @@ function easyRound(){
     next.addEventListener("click", () => {
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`);
-        console.log(round)
         displayEasyQuestion();
         resetRound();
+        reableAnswers();
+        endEasyGame();
         header.style.backgroundColor = "rgb(21, 87, 111)";
         gameMode.style.backgroundColor = "rgb(0, 222, 230)";
-        for(let i = 0; i < 4; i++){
-            answers[i].removeAttribute("id");
-            answers[i].disabled = false;
-        }
-        endEasyGame();
     })
 }
 
@@ -741,13 +740,10 @@ function medRound(){
         document.getElementById("round").innerHTML = (`Round: ${round}/10`);
         displayMedQuestion();
         resetRound();
+        reableAnswers();
+        endMedGame();
         header.style.backgroundColor = "rgb(97, 30, 94)";
         gameMode.style.backgroundColor = "rgb(174, 46, 212)";
-        for(let i = 0; i < 4; i++){
-            answers[i].removeAttribute("id");
-            answers[i].disabled = false;
-        }
-        endMedGame();
     })
 }
 
@@ -758,13 +754,10 @@ function hardRound(){
         document.getElementById("round").innerHTML = (`Round: ${round}/10`);
         displayHardQuestion();
         resetRound();
+        reableAnswers();
+        endHardGame();
         header.style.backgroundColor = "rgb(100, 10, 10)";
         gameMode.style.backgroundColor = "rgba(153, 6, 6)";
-        for(let i = 0; i < 4; i++){
-            answers[i].removeAttribute("id");
-            answers[i].disabled = false;
-        }
-        endHardGame();
     })
 }
 
@@ -780,6 +773,7 @@ function gameOver(){
         })
     }
 }
+
 // Manipulates the DOM after 10 rounds is reached to display score card for Easy/Medium/Hard difficulties
 function endEasyGame(){
     gameOver();
