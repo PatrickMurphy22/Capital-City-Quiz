@@ -1,4 +1,4 @@
-// Add HTML classes and Id's to variables to use thrrought JavaScript
+// Add variables containing HTML elements.
 let header = document.getElementById("header");
 let result = document.getElementById("result");
 let answers = document.getElementsByClassName("answer");
@@ -439,7 +439,7 @@ const insultsWrong = [
     },
 ]
 
-const easyFacts = [
+const facts = [
     {
         fact: ("Japan expeiences 20% of the world's 6.0-magnitude or higher earthquakes")
     },
@@ -458,10 +458,6 @@ const easyFacts = [
     {
         fact: ("Believe it or not, there are no leprechauns in Ireland")
     },
-
-]
-
-const mediumFacts = [
     {
         fact: ("Australia is the continent in the world to have no active volcanoes.")
     },
@@ -480,10 +476,6 @@ const mediumFacts = [
     {
         fact: ("Around 70 tribes with 30 various dialects reside in Kenya.")
     },
-
-]
-
-const hardFacts = [
     {
         fact: ("Chad is branded as the Dead Heart of Africa.")
     },
@@ -502,37 +494,22 @@ const hardFacts = [
     {
         fact: ("Toby Flenderson is the Scranton Strangler")
     },
-
 ]
 
-// functions to alter DOM if Correct or Wrong choice slected then restore after use.
-function resetRound(){
+// Funtion that resets header after player presses next. 
+function resetHeader(){
     header.style.color = "white";
     header.style.fontSize = "30px"
     header.innerHTML = "Capital Quiz"
     whatIs.innerHTML = "-What is the capital of-"
 }
 
-function disableAnswers(){
-    for (let i = 0; i < 4; i++){
-        answers[i].disabled = true;
-    }
-}
 
-function reableAnswers(){
-    for (let i = 0; i < 4; i++){
-        answers[i].disabled = false;
-        answers[i].removeAttribute("id")
-    }
-}
-
+// Functions that occurs when correct or the wrong answer is selected by the player.
 function correctChoice(){
     header.style.backgroundColor = "rgb(19, 66, 27)"
     header.innerHTML = "-CORRECT-"
     header.style.fontSize = "30px"
-
-    header.className = "correct"
-    gameMode.style.backgroundColor = "green";
 }
 
 function wrongChoice(){
@@ -542,19 +519,15 @@ function wrongChoice(){
     gameMode.style.backgroundColor = "red";
 }
 
+// Adds event listener to Header when player is playing the quiz. 
 function selectionMenu(){
     header.addEventListener("click", () => {
         location.href ="index.html"
     })
 };
 
-function endGameDom(){
-    document.querySelector(".next").style.visibility = "hidden";
-    scoreContainer.removeAttribute("hidden");
-    scoreBox.remove()
-    qBox.remove()
-}
 
+// Function that maniuplates the DOM and displays the quiz game. 
 function displayGame(){
     header.style.color = "white";
     qBox.style.height = "20vh";
@@ -568,43 +541,8 @@ function displayGame(){
     gameMode.style.height = "90vh";
 }
 
-function correctInsults(){
-    let random = Math.floor(Math.random() * insultsCorrect.length);
-    insults = insultsCorrect[random];
-    whatIs.innerHTML = insults.insult;
-}
 
-function wrongInsults(){
-    let random = Math.floor(Math.random() * insultsWrong.length);
-    insults = insultsWrong[random];
-    whatIs.innerHTML = insults.insult;
-}
-//Fun Facts in Array format to dispaly at end of Easy/Medium/Hard difficulties
-
-function randomEasyFacts(){
-    
-    let random = Math.floor(Math.random() * easyFacts.length);
-    funFacts = hardFacts[random];
-    fun.innerHTML = funFacts.fact;
-
-}
-
-function randomMedFacts(){
-    
-    let random = Math.floor(Math.random() * mediumFacts.length);
-    funFacts = hardFacts[random];
-    fun.innerHTML = funFacts.fact;
-
-}
-
-function randomHardFacts(){  
-    let random = Math.floor(Math.random() * hardFacts.length);
-    funFacts = hardFacts[random];
-    fun.innerHTML = funFacts.fact;
-
-}
-
-//Function that calls other funtions to play either Easy/Medium/Hard difficulties
+//Functions that contains other functions allowing each mode to be played.
 function easyGame(){
     displayEasyQuestion();
     playerChoice();
@@ -623,6 +561,8 @@ function hardGame(){
     endHardGame();
 }
 
+
+//Function that displays random Country along with the options for that city.
 function generateRandomQuestions(){
         
     let randomise = Math.floor(Math.random() * quiz.length );
@@ -645,7 +585,7 @@ function generateRandomQuestions(){
 }
 
 
-//function to randomly displays Country and City for Easy/Medium/Hard difficulties
+//Functions to randomly displays Country and City for Easy/Medium/Hard difficulties
 function displayEasyQuestion(){
     quiz = easyCountrys;
     easyMode.addEventListener("click", () =>{
@@ -654,13 +594,12 @@ function displayEasyQuestion(){
         easyRound();
         for(let i = 0; i < scoreCard.length; i++){
             scoreCard[i].style.background = "linear-gradient(to right, rgb(21, 87, 111), rgb(8, 216, 216))";
-            
         }
         gameMode.style.backgroundColor = "rgb(0, 222, 230)";
         header.style.backgroundColor = "rgb(21, 87, 111)";
     });
     generateRandomQuestions()
-};
+}
 
 function displayMedQuestion(){
     quiz = mediumCountrys;
@@ -694,7 +633,15 @@ function displayHardQuestion(){
 }
 
 
-//Add eventlistener to all answers on Easy/Medium/Hard difficulties, if capital selected score increases by one.
+// function to disable buttons.
+function disableAnswers(){
+    for (let i = 0; i < 4; i++){
+        answers[i].disabled = true;
+    }
+}
+
+
+// Function that adds eventlistener to all answers on Easy/Medium/Hard difficulties, if capital selected score increases by one.
 function playerChoice(){
     
     for(let i = 0; i < 4; i++){
@@ -718,14 +665,38 @@ function playerChoice(){
         }   
 }
 
-// Adds event listener that increases round number and changes question for Easy/Medium/Hard difficulties
+
+// Function to reable buttons.
+function reableAnswers(){
+    for (let i = 0; i < 4; i++){
+        answers[i].disabled = false;
+        answers[i].removeAttribute("id")
+    }
+}
+
+
+//Functions that display random insults wether player is right or wrong
+function correctInsults(){
+    let random = Math.floor(Math.random() * insultsCorrect.length);
+    insults = insultsCorrect[random];
+    whatIs.innerHTML = insults.insult;
+}
+
+function wrongInsults(){
+    let random = Math.floor(Math.random() * insultsWrong.length);
+    insults = insultsWrong[random];
+    whatIs.innerHTML = insults.insult;
+}
+
+
+// Functions that adds event listeners to next that increases ROUND and calls other relevent functions.
 function easyRound(){
 
     next.addEventListener("click", () => {
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`);
         displayEasyQuestion();
-        resetRound();
+        resetHeader();
         reableAnswers();
         endEasyGame();
         header.style.backgroundColor = "rgb(21, 87, 111)";
@@ -739,7 +710,7 @@ function medRound(){
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`);
         displayMedQuestion();
-        resetRound();
+        resetHeader();
         reableAnswers();
         endMedGame();
         header.style.backgroundColor = "rgb(97, 30, 94)";
@@ -753,7 +724,7 @@ function hardRound(){
         round++;
         document.getElementById("round").innerHTML = (`Round: ${round}/10`);
         displayHardQuestion();
-        resetRound();
+        resetHeader();
         reableAnswers();
         endHardGame();
         header.style.backgroundColor = "rgb(100, 10, 10)";
@@ -761,6 +732,16 @@ function hardRound(){
     })
 }
 
+
+//Function that removes DOM elements when certain threshold is met.
+function endGameDom(){
+    document.querySelector(".next").style.visibility = "hidden";
+    scoreContainer.removeAttribute("hidden");
+    scoreBox.remove()
+    qBox.remove()
+}
+
+// Functions that changes text of next button then adds eventlistener to remove 4 buttons.
 function gameOver(){
     if(round === 10){
         next.innerHTML = "Finish";
@@ -774,10 +755,20 @@ function gameOver(){
     }
 }
 
-// Manipulates the DOM after 10 rounds is reached to display score card for Easy/Medium/Hard difficulties
+//Fun Facts in Array format to dispaly at end of Easy/Medium/Hard difficulties
+function randomFacts(){
+    
+    let random = Math.floor(Math.random() * facts.length);
+    funFacts = facts[random];
+
+    fun.innerHTML = funFacts.fact;
+}
+
+
+//Functions that displays players score, comment and random fact.
 function endEasyGame(){
     gameOver();
-    randomEasyFacts(); 
+    randomFacts(); 
     finalScore.innerHTML = score;
     if(score < 5 ){
         result.innerHTML = "Do you even know where your house is??";
@@ -790,7 +781,7 @@ function endEasyGame(){
 
 function endMedGame(){
     gameOver();   
-    randomMedFacts(); 
+    randomFacts(); 
     finalScore.innerHTML = score;
     if(score < 5 ){
        result.innerHTML = "LOL, I suppose you think Africa is a country??";
@@ -802,8 +793,7 @@ function endMedGame(){
 }
 
 function endHardGame(){
-    gameOver();   
-    randomHardFacts(); 
+    randomFacts(); 
     finalScore.innerHTML = score;
     if(score < 5 ){
         result.innerHTML = "Ha Ha Ha I knew it.. Pathetic effort to be say the least...";
