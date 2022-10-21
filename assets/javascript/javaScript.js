@@ -510,6 +510,7 @@ function correctChoice(){
     header.style.backgroundColor = "rgb(19, 66, 27)"
     header.innerHTML = "-CORRECT-"
     header.style.fontSize = "30px"
+    gameMode.style.backgroundColor = "green"
 }
 
 function wrongChoice(){
