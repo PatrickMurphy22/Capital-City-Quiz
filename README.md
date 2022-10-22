@@ -4,9 +4,9 @@
 
 Welcome to the Capital City Quiz! This is a quiz for those who want to test their capital city knowledge. The quiz has 3 difficulties EASY, MEDIUM, HARD. A few witty comments are thrown at the user along with some interesting World facts. The quiz was designed to be interactive and fun for the user, and having the user want to play again right after finishing a round.
 
-![Website on multiple screen sizes]()
+![Website on multiple screen sizes](../Capital-City-Quiz/assets/images/readMe-images/Am%20I%20Responsive_.png)
 
-[Capital Quiz Live Website here](https)
+[Capital Quiz Live Website here](https://patrickmurphy22.github.io/Capital-City-Quiz/)
 
 # Table of Contents
 
@@ -18,9 +18,7 @@ ____
     * [Index Page](#index-page)
     * [Difficulty Selection](#difficulty-selction)
     * [Footer](#footer)
-    * [Easy Mode](#easy-mode)
-    * [Medium Mode](#medium-mode)
-    * [Hard Mode](#hard-mode)
+    * [Difficulty Modes](#difficulty-modes)
     * [Results Page](#result-page)
     * [Further Features](#further-features)
 3. [User Experience](#user-experience)
@@ -69,21 +67,32 @@ This Quiz was developed mobile first as per industry standard.
    1. Text that invites the user to select from the 3 difficulties located below
    2. 3 difficulty section ranging from Easy(Beginner), Medium(Journeyman), Hard(Seasoned)
    
-### Index Page on Desktops
+### Index Page on Mobile & larger screens
 
-![Index page on Mobile]()
+![Index page on Mobile](../Capital-City-Quiz/assets/images/readMe-images/homepage-mobile.png)
+![Index page on Desktop](../Capital-City-Quiz/assets/images/readMe-images/homepage-large-screen.png)
+
 
 ## The Footer
 
 The footer contains 2 social media links and icons, which will take users to my GitHub and LinkedIn.
 
-![Footer]()
 
-## Easy Mode
+## Difficulty Modes
 
-## Medium Mode
+As mentioned above the difficulty modes are Easy(Beginner), Medium(Journeyman), Hard(Seasoned).
 
-## Hard Mode.
+1. All 3 mode contain 20 random countrys with 4 options each, with one option being the countries Capital.
+
+2. The difficulty of these modes are relative to the European region as the easier mode contains mainly eurpoean coutrys
+    and citys, with the harder difficulties being namely African, South American and Asian countries.
+
+3. All 3 modes have different color palettes from light blue for easiest mode, purple for medium mode and red for hard mode.
+
+
+![Easy Mode on Mobile](../Capital-City-Quiz/assets/images/readMe-images/quiz-large-mobile.png)
+![Medium Mode on Tablet](../Capital-City-Quiz/assets/images/readMe-images/medium-mode.png)
+![Hard Modes on Desktop](../Capital-City-Quiz/assets/images/readMe-images/quiz-large-screen.png)
 
 ## Results Page
 
@@ -118,8 +127,7 @@ The footer contains 2 social media links and icons, which will take users to my 
 
     However there are parts of the code which I believe can reduce when I get a better grasp of JavaScript.
     
-
-    JavaScript is used for a massive 66.5%
+    JavaScript is used for a majority 66.5%
 
 
 # Testing
@@ -128,8 +136,8 @@ Testing was carried out on HP Laptop, Macbook Pro, Iphone 11 and Samsung s22.
 
  ## W3C Validation
  The website raised no issues on W3C CSS or HTML 
- ![]()
- ![]()
+ ![W3C validation for CSS](../Capital-City-Quiz/assets/images/readMe-images/W3C%20CSS%20Validator%20results%20for%20TextArea%20(CSS%20level%203%20%2B%20SVG).png)
+ ![Deepscan JavaScript](../Capital-City-Quiz/assets/images/readMe-images/Dashboard%20_%20DeepScan.png)
 
 ## Lighthouse
  The Website received the following scores on Lighthouse
@@ -138,7 +146,7 @@ Testing was carried out on HP Laptop, Macbook Pro, Iphone 11 and Samsung s22.
     Best Practices: 83/100
     SEO: 100/100
 
- ![]()
+ ![Lighthouse](../Capital-City-Quiz/assets/images/readMe-images/lighthouse.png)
 
 # Bugs 
 
