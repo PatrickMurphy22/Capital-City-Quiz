@@ -111,12 +111,14 @@ There are 4 actions the user can do inside the quiz game mode.
     1. Header goes red and displays WRONG.
     2. Button an background goes red. 
     3. Correct city will be disaplayed and a cheeky insult will be given by computer.
+
     ![Wrong Answer](assets/images/readMe-images/wrongGuess.png)
 
     If user selects Correct answer,
     1. Header goes green and displays Correct.
     2. Button an background goes green. 
     3. the computer will display a cheeky remark to correct guess.
+
     ![Correct Answer](assets/images/readMe-images/correctGuess.png)
 
 The use of insults are as comedic as possible to get a giggle out of the user.
@@ -127,9 +129,9 @@ Along with making the user want to get the answer right to rub it in the compute
 
 The results page is displayed once the user passes round 10.
 The results page contains 3 seperate containers.
-1. Disaplys users score out of 10
+1. Displays users score out of 10
 2. Depending what user had scored a different comment will be dispalyed to them.
-3. A fun interesting fact/Pop culture reference is picked and disaplyed at random. 
+3. A fun interesting fact/Pop culture reference is picked and displayed at random. 
 
 ## Further Features 
 
@@ -207,13 +209,13 @@ Testing was carried out on HP Laptop, Macbook Pro, Iphone 11 and Samsung s22, Ip
 
 During the development I came across 2 bugs.
 
-1. Allowed allowed users to choose more than one option during the quiz mode.
+ One bug allowed users to choose more than one option during the quiz mode.
  1. I added remove event listeners to buttons and disable features none of which worked.
  2. I came up with a solution which was to create
  a new function that disabled all buttons on screen.
 
-2. When selecting a correct country or pressing next, Score and Round would increase
-by +1 everytime. Second round woul be round 3, round 3 would be round 5 and so on.
+The other bug caused the Score and Round to increaseby +1 everytime. 
+Second round would be round 3, round 3 would be round 5 and so on and same for the score.
 
  1. The solution was simple yet took me very long to find as I believed it was function 
 causing the issue.
@@ -232,6 +234,8 @@ All code was written and implemented by me, however 3 parts of the code written 
 above this code to highlight it.
 
 3. Inspiration for the footer code was taken from The Love Running project.
+
+My goal all the code I had written was to make my code Dynamic, Reuseable and do my best not to repeat code. 
 
 All the above code was reconfigured to be useable for the Capital Quiz.
 
