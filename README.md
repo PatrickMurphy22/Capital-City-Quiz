@@ -48,6 +48,8 @@ The purpose of this quiz is to be educational aswell as providing the user with 
 
 There is a high likely hood that there will be citys and capitals that the user has never heard of, after a few rounds of this quiz the user will be a geographical genuis.
 
+This Quiz was developed mobile first as per industry standard.
+
 ---
 
 ## Header

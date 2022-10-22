@@ -29,6 +29,8 @@ document.getElementById("score").innerHTML = (`Score: ${score}/10`);
 // Set variables to undefined to use throught code.
 let currentQuestion;
 let funFacts;
+let quiz;
+let insults;
 
 // Quiz arrays, Insults arrays & facts arrys.
 const easyCountrys= [
@@ -128,7 +130,7 @@ const easyCountrys= [
         citys:["Brussels","Bruges","Antwerp","Ghent"],
         capital:("Brussels")
     },
-]
+];
 
 const mediumCountrys = [
     {
@@ -231,7 +233,7 @@ const mediumCountrys = [
         citys:["Bern","Zurich","Geneva","Basel"],
         capital:("Bern")
     },
-]
+];
 
 const hardCountrys = [
     {
@@ -335,7 +337,7 @@ const hardCountrys = [
         capital:("Suva")
     },
 
-]
+];
 
 const insultsCorrect = [
     {
@@ -386,7 +388,7 @@ const insultsCorrect = [
     {
         insult: ("I told my therapist about you.")
     },
-]
+];
 
 const insultsWrong = [
     {
@@ -437,7 +439,7 @@ const insultsWrong = [
     {
         insult: ("If you spoke your mind, you'd be speechless.")
     },
-]
+];
 
 const facts = [
     {
@@ -494,38 +496,38 @@ const facts = [
     {
         fact: ("Toby Flenderson is the Scranton Strangler")
     },
-]
+];
 
 // Funtion that resets header after player presses next. 
 function resetHeader(){
     header.style.color = "white";
-    header.style.fontSize = "30px"
-    header.innerHTML = "Capital Quiz"
-    whatIs.innerHTML = "-What is the capital of-"
+    header.style.fontSize = "30px";
+    header.innerHTML = "Capital Quiz";
+    whatIs.innerHTML = "-What is the capital of-";
 }
 
 
 // Functions that occurs when correct or the wrong answer is selected by the player.
 function correctChoice(){
-    header.style.backgroundColor = "rgb(19, 66, 27)"
-    header.innerHTML = "-CORRECT-"
-    header.style.fontSize = "30px"
-    gameMode.style.backgroundColor = "green"
+    header.style.backgroundColor = "rgb(19, 66, 27)";
+    header.innerHTML = "-CORRECT-";
+    header.style.fontSize = "30px";
+    gameMode.style.backgroundColor = "green";
 }
 
 function wrongChoice(){
-    header.style.backgroundColor = "rgb(77, 2, 2)"
-    header.innerHTML = "-WRONG-"
-    header.style.fontSize = "30px"
+    header.style.backgroundColor = "rgb(77, 2, 2)";
+    header.innerHTML = "-WRONG-";
+    header.style.fontSize = "30px";
     gameMode.style.backgroundColor = "red";
 }
 
 // Adds event listener to Header when player is playing the quiz. 
 function selectionMenu(){
     header.addEventListener("click", () => {
-        location.href ="index.html"
-    })
-};
+        location.href ="index.html";
+    });
+}
 
 
 // Function that maniuplates the DOM and displays the quiz game. 
@@ -599,7 +601,7 @@ function displayEasyQuestion(){
         gameMode.style.backgroundColor = "rgb(0, 222, 230)";
         header.style.backgroundColor = "rgb(21, 87, 111)";
     });
-    generateRandomQuestions()
+    generateRandomQuestions();
 }
 
 function displayMedQuestion(){
@@ -615,7 +617,7 @@ function displayMedQuestion(){
         header.style.backgroundColor = "rgb(97, 30, 94)";
     });
 
-    generateRandomQuestions()
+    generateRandomQuestions();
 }
 
 function displayHardQuestion(){
@@ -644,25 +646,25 @@ function disableAnswers(){
 
 // Function that adds eventlistener to all answers on Easy/Medium/Hard difficulties, if capital selected score increases by one.
 function playerChoice(){
-    
+
     for(let i = 0; i < 4; i++){
         answers[i].addEventListener("click", () => {
             if(currentQuestion.capital == currentQuestion.citys[i]){
-                    answers[i].id = "correct"
+                    answers[i].id = "correct";
                     score++;
                     document.getElementById("score").innerHTML = (`Score: ${score}/10`);
-                    displayCountry.innerHTML = ``
+                    displayCountry.innerHTML = ``;
                     correctInsults();
                     disableAnswers();
-                    correctChoice()
+                    correctChoice();
                 }else{
-                    displayCountry.innerHTML = `Answer: ${currentQuestion.capital}`
-                    answers[i].id = "wrong"
+                    displayCountry.innerHTML = `Answer: ${currentQuestion.capital}`;
+                    answers[i].id = "wrong";
                     disableAnswers();
                     wrongChoice();
                     wrongInsults();
                 }
-            })  
+            });
         }   
 }
 
@@ -671,7 +673,7 @@ function playerChoice(){
 function reableAnswers(){
     for (let i = 0; i < 4; i++){
         answers[i].disabled = false;
-        answers[i].removeAttribute("id")
+        answers[i].removeAttribute("id");
     }
 }
 
@@ -702,7 +704,7 @@ function easyRound(){
         endEasyGame();
         header.style.backgroundColor = "rgb(21, 87, 111)";
         gameMode.style.backgroundColor = "rgb(0, 222, 230)";
-    })
+    });
 }
 
 function medRound(){
@@ -716,7 +718,7 @@ function medRound(){
         endMedGame();
         header.style.backgroundColor = "rgb(97, 30, 94)";
         gameMode.style.backgroundColor = "rgb(174, 46, 212)";
-    })
+    });
 }
 
 function hardRound(){
@@ -730,7 +732,7 @@ function hardRound(){
         endHardGame();
         header.style.backgroundColor = "rgb(100, 10, 10)";
         gameMode.style.backgroundColor = "rgba(153, 6, 6)";
-    })
+    });
 }
 
 
@@ -738,8 +740,8 @@ function hardRound(){
 function endGameDom(){
     document.querySelector(".next").style.visibility = "hidden";
     scoreContainer.removeAttribute("hidden");
-    scoreBox.remove()
-    qBox.remove()
+    scoreBox.remove();
+    qBox.remove();
 }
 
 // Functions that changes text of next button then adds eventlistener to remove 4 buttons.
@@ -752,7 +754,7 @@ function gameOver(){
                 answers[i].style.height = "0vh";
             }
             endGameDom();
-        })
+        });
     }
 }
 
@@ -777,7 +779,7 @@ function endEasyGame(){
         result.innerHTML = "You're far from a globe trotter, but you're getting there";
     }else{
         result.innerHTML = "Not bad, maybe you are ready to take the next step...";
-    };
+    }
 }
 
 function endMedGame(){
@@ -802,7 +804,7 @@ function endHardGame(){
         result.innerHTML = "So so so close, maybe 20 more attempts and you'll get there.";
     }else{
         result.innerHTML = "Congrats, you have endless amounts of useless knowledge.";
-    };
+    }
 }
 
 selectionMenu();

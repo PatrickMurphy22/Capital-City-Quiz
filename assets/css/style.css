@@ -127,7 +127,6 @@
   /* ANSWERS */
 
 #answer-container{
-    height: 0vh;
     width: 80vw;
     margin: auto;
 }
@@ -367,7 +366,7 @@ footer{
 
     }
     #answer-container{
-        height: 60vh;
+        height: 0vh;
     }
     #question-box{
         height: 20vh;
@@ -405,7 +404,8 @@ footer{
     .score3{
         font-size: 18px;
     }
-    footer{  
+    footer{ 
+        margin-top: 20px; 
         height: 100px;
     }
     
