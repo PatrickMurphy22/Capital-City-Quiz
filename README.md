@@ -4,7 +4,7 @@
 
 Welcome to the Capital City Quiz! This is a quiz for those who want to test their capital city knowledge. The quiz has 3 difficulties EASY, MEDIUM, HARD. A few witty comments are thrown at the user along with some interesting World facts. The quiz was designed to be interactive and fun for the user, and having the user want to play again right after finishing a round.
 
-![Website on multiple screen sizes](../Capital-City-Quiz/assets/images/readMe-images/Am%20I%20Responsive_.png)
+![Website on multiple screen sizes](assets/images/readMe-images/Am%20I%20Responsive_.png)
 
 [Capital Quiz Live Website here](https://patrickmurphy22.github.io/Capital-City-Quiz/)
 
@@ -69,8 +69,8 @@ This Quiz was developed mobile first as per industry standard.
    
 ### Index Page on Mobile & larger screens
 
-![Index page on Mobile](../Capital-City-Quiz/assets/images/readMe-images/homepage-mobile.png)
-![Index page on Desktop](../Capital-City-Quiz/assets/images/readMe-images/homepage-large-screen.png)
+![Index page on Mobile](assets/images/readMe-images/homepage-mobile.png)
+![Index page on Desktop](assets/images/readMe-images/homepage-large-screen.png)
 
 
 ## The Footer
@@ -90,13 +90,23 @@ As mentioned above the difficulty modes are Easy(Beginner), Medium(Journeyman), 
 3. All 3 modes have different color palettes from light blue for easiest mode, purple for medium mode and red for hard mode.
 
 
-![Easy Mode on Mobile](../Capital-City-Quiz/assets/images/readMe-images/quiz-large-mobile.png)
-![Medium Mode on Tablet](../Capital-City-Quiz/assets/images/readMe-images/medium-mode.png)
-![Hard Modes on Desktop](../Capital-City-Quiz/assets/images/readMe-images/quiz-large-screen.png)
+![Easy Mode on Mobile](assets/images/readMe-images/quiz-large-mobile.png)
+![Medium Mode on Tablet](assets/images/readMe-images/medium-mode.png)
+![Hard Modes on Desktop](assets/images/readMe-images/quiz-large-screen.png)
 
 ## Results Page
 
 ## Further Features 
+
+Further features for the Quiz are.
+
+1. After every correct/wrong guess a random comment will be displayed by the computer insulting the player.
+2. 
+### Future Features
+
+In the future I wish to implement a mode that is unlocked when players get 10/10 on the hardest difficulty.
+This mode will have players competing against the comuter in the quiz. 
+Along with added a time elemnt to the quiz to put more pressure on the user. 
 
 # Technology 
 
