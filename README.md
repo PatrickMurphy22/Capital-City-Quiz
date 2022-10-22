@@ -125,6 +125,12 @@ Along with making the user want to get the answer right to rub it in the compute
 
 ## Results Page
 
+The results page is displayed once the user passes round 10.
+The results page contains 3 seperate containers.
+1. Disaplys users score out of 10
+2. Depending what user had scored a different comment will be dispalyed to them.
+3. A fun interesting fact/Pop culture reference is picked and disaplyed at random. 
+
 ## Further Features 
 
 Further features for the Quiz are.
@@ -199,6 +205,20 @@ Testing was carried out on HP Laptop, Macbook Pro, Iphone 11 and Samsung s22, Ip
 
 # Bugs 
 
+During the development I came across 2 bugs.
+
+1. Allowed allowed users to choose more than one option during the quiz mode.
+ 1. I added remove event listeners to buttons and disable features none of which worked.
+ 2. I came up with a solution which was to create
+ a new function that disabled all buttons on screen.
+
+2. When selecting a correct country or pressing next, Score and Round would increase
+by +1 everytime. Second round woul be round 3, round 3 would be round 5 and so on.
+
+ 1. The solution was simple yet took me very long to find as I believed it was function 
+causing the issue.
+ 2. The solution was to remove the function being called in another function and add a 
+ gameMode function containing all other function and call that instead.
 
 # Credits
 
@@ -218,9 +238,6 @@ All the above code was reconfigured to be useable for the Capital Quiz.
 ## Icons
 
 All icons were provided from Font Awesome. 
-
-# Acknowledgement
-
 
 
 
