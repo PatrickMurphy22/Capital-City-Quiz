@@ -796,6 +796,7 @@ function endMedGame(){
 }
 
 function endHardGame(){
+    gameOver(); 
     randomFacts(); 
     finalScore.innerHTML = score;
     if(score < 5 ){
